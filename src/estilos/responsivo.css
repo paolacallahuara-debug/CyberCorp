@@ -1,0 +1,5301 @@
+/* =========================================================
+   MAPA ESTRUCTURAL AÑADIDO · RESPONSIVO
+   IMPORTANTE: no se eliminó ni reordenó ninguna regla CSS.
+   Solo se añadieron separadores para identificar cada bloque.
+   ========================================================= */
+
+
+/* =========================================================
+   INICIO · BASE RESPONSIVE · CONTENCIÓN GLOBAL
+   Ancho máximo, overflow e imágenes.
+   ========================================================= */
+/*
+ * Capa final de diseño responsive de CyberCorp.
+ * Las clases nuevas están nombradas en español para mantener una convención clara.
+ */
+
+html,
+body,
+#root {
+  max-width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   FIN · BASE RESPONSIVE · CONTENCIÓN GLOBAL
+   ========================================================= */
+
+/* =========================================================
+   INICIO · ESTRUCTURA GLOBAL · LOGO, TEMA Y NAVEGACIÓN
+   Logo claro/oscuro y escala de navegación.
+   ========================================================= */
+/* ---------- Marca y navegación ---------- */
+
+.logo-empresa,
+html[data-tema="claro"] .logo-empresa {
+  position: relative;
+  width: auto;
+  height: auto;
+  border: 0;
+  background: transparent !important;
+  box-shadow: none;
+  filter: none;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  border-radius: 8px;
+  padding: 4px 2px;
+}
+
+
+.logo-empresa .logo-tema,
+html[data-tema="claro"] .logo-empresa .logo-tema {
+  position: static;
+  display: block !important;
+  width: auto;
+  height: 52px;
+  max-width: 240px;
+  top: unset;
+  left: unset;
+  object-fit: contain;
+  transition: none !important;
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   TEMA OSCURO
+   logo-sinfondo.png
+   ========================================================= */
+
+/* ---------- Tema oscuro (por defecto) ---------- */
+
+.logo-empresa .logo-oscuro {
+  display: block !important;
+}
+
+.logo-empresa .logo-claro {
+  display: none !important;
+}
+
+
+/* ---------- Tema claro ---------- */
+
+html[data-tema="claro"] .logo-empresa .logo-oscuro {
+  display: none !important;
+}
+
+html[data-tema="claro"] .logo-empresa .logo-claro {
+  display: block !important;
+}
+
+
+.cabecera .nav {
+  font-size: clamp(13px, 1vw, 15px);
+}
+
+
+/* =========================================================
+   FIN · ESTRUCTURA GLOBAL · LOGO, TEMA Y NAVEGACIÓN
+   ========================================================= */
+
+/* =========================================================
+   INICIO · ESTRUCTURA GLOBAL · TÍTULOS DE SECCIÓN
+   Escala de títulos y texto auxiliar.
+   ========================================================= */
+/* ---------- Títulos de sección ---------- */
+.titulo-seccion h2 {
+  font-size: clamp(1.8rem, 3vw, 3.25rem);
+}
+
+.texto-suave {
+  max-width: 360px;
+  font-size: clamp(13px, 1.2vw, 16px);
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   FIN · ESTRUCTURA GLOBAL · TÍTULOS DE SECCIÓN
+   ========================================================= */
+
+/* =========================================================
+   INICIO · PÁGINA DE INICIO · CATEGORÍAS
+   Rejilla y tarjetas de categorías.
+   ========================================================= */
+/* ---------- Inicio: categorías ---------- */
+.rejilla-categorias-inicio {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: clamp(10px, 1.2vw, 16px);
+}
+
+.tarjeta-categoria-inicio {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 132px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 22px 12px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--surface);
+  text-align: center;
+  font-size: clamp(13px, 1vw, 15px);
+  font-weight: 700;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tarjeta-categoria-inicio>svg:first-child {
+  color: var(--cyan);
+}
+
+.tarjeta-categoria-inicio>svg:last-child {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: var(--suave);
+}
+
+.tarjeta-categoria-inicio:hover {
+  transform: translateY(-3px);
+  border-color: var(--cyan);
+  box-shadow: 0 14px 34px #08153320;
+}
+
+
+/* =========================================================
+   FIN · PÁGINA DE INICIO · CATEGORÍAS
+   ========================================================= */
+
+/* =========================================================
+   INICIO · PÁGINA DE INICIO · OFERTAS
+   Tarjetas, visual, descuento, contenido y precios.
+   ========================================================= */
+/* ---------- Inicio: ofertas ---------- */
+.rejilla-ofertas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.tarjeta-oferta {
+  display: grid;
+  grid-template-columns: minmax(210px, 0.95fr) minmax(0, 1.05fr);
+  min-width: 0;
+  min-height: 300px;
+  overflow: hidden;
+  border: 1px solid #39405c;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #1f2944, #1b1d39);
+  color: #fff;
+  content-visibility: auto;
+  contain-intrinsic-size: 320px;
+}
+
+.visual-oferta {
+  position: relative;
+  min-height: 100%;
+  overflow: hidden;
+  background: linear-gradient(145deg, #172338, #27304c);
+}
+
+.imagen-oferta {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  object-fit: cover;
+}
+
+.marcador-oferta {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  place-items: center;
+  color: var(--cyan);
+  background: radial-gradient(circle at 50% 45%, #20c4f42a, transparent 55%);
+}
+
+.descuento-oferta {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 7px 10px;
+  border: 1px solid #ff7aa54f;
+  border-radius: 999px;
+  background: #191b35db;
+  color: #ff82aa;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  backdrop-filter: blur(10px);
+}
+
+.contenido-oferta {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(22px, 3vw, 34px);
+}
+
+.contenido-oferta h3 {
+  margin: 0 0 12px;
+  color: #fff;
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  line-height: 1.08;
+}
+
+.contenido-oferta p {
+  display: -webkit-box;
+  margin: 0 0 18px;
+  overflow: hidden;
+  color: #c2c7da;
+  font-size: 14px;
+  line-height: 1.55;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.precio-oferta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+  margin: auto 0 18px;
+}
+
+.precio-oferta strong {
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+}
+
+.precio-oferta del {
+  color: #9399af;
+  font-size: 13px;
+}
+
+.contenido-oferta .enlace {
+  align-self: flex-start;
+  color: #fff;
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   FIN · PÁGINA DE INICIO · OFERTAS
+   ========================================================= */
+
+/* =========================================================
+   INICIO · PÁGINA DE PRODUCTOS
+   Filtros, buscador, rejilla, Card Hover Effect, tarjetas y paginación.
+   ========================================================= */
+/* ---------- Productos ---------- */
+.panel-filtros-productos {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+  gap: 18px;
+  align-items: start;
+  margin: 30px 0 18px;
+}
+
+.bloque-categorias-productos {
+  min-width: 0;
+}
+
+.categorias-productos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.categorias-productos button {
+  min-height: 39px;
+  padding: 9px 13px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--foreground);
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.15;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.categorias-productos button:hover {
+  border-color: var(--cyan);
+}
+
+.categorias-productos button.seleccionado {
+  border-color: var(--cyan);
+  background: var(--cyan);
+  color: #101527;
+}
+
+.boton-desplegar-categorias {
+  display: none;
+  align-items: center;
+  gap: 7px;
+  margin-top: 10px;
+  padding: 8px 0;
+  color: var(--cyan);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+.resumen-productos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 8px 0 18px;
+  scroll-margin-top: 150px;
+}
+
+.resumen-productos p,
+.resumen-productos span {
+  margin: 0;
+  color: var(--suave);
+  font-size: 13px;
+}
+
+.rejilla-productos {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(14px, 1.7vw, 22px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   PRODUCTOS · CARD HOVER EFFECT
+   Inspirado en Aceternity UI
+   ========================================================= */
+
+
+/* La rejilla completa crea su propio contexto de capas */
+
+.contenedor-efecto-hover-productos {
+  position: relative;
+
+  isolation: isolate;
+
+  overflow: visible;
+}
+
+
+/* Cada espacio donde vive una tarjeta */
+
+.envoltura-hover-producto {
+  position: relative;
+
+
+  min-width: 0;
+  height: 100%;
+
+  padding: 9px;
+
+  border-radius: 28px;
+
+  overflow: visible;
+}
+
+
+/*
+ * Cuando una tarjeta está delante del fondo animado,
+ * siempre conservamos su contenido en una capa superior.
+ */
+
+.contenido-hover-producto {
+  position: relative;
+
+  z-index: 20;
+
+  min-width: 0;
+  height: 100%;
+
+  pointer-events: auto;
+}
+
+
+/* =========================================================
+   FONDO ANIMADO
+   ========================================================= */
+
+.fondo-hover-producto {
+  position: absolute;
+
+  z-index: 0;
+
+  inset: 0;
+
+  display: block;
+
+  border-radius: 28px;
+
+  pointer-events: none;
+
+  will-change:
+    transform,
+    width,
+    height;
+
+  transform: translateZ(0);
+}
+
+
+/* =========================================================
+   MODO OSCURO
+   ========================================================= */
+
+html[data-tema="oscuro"] .fondo-hover-producto {
+  background:
+    linear-gradient(145deg,
+      rgba(32, 196, 244, 0.20),
+      rgba(32, 196, 244, 0.07) 45%,
+      rgba(255, 28, 104, 0.11));
+
+  border:
+    1px solid rgba(32, 196, 244, 0.30);
+
+  box-shadow:
+    0 20px 55px rgba(0, 0, 0, 0.24),
+    0 0 30px rgba(32, 196, 244, 0.07);
+}
+
+
+/* =========================================================
+   MODO CLARO
+   ========================================================= */
+
+html[data-tema="claro"] .fondo-hover-producto {
+  background:
+    linear-gradient(145deg,
+      rgba(32, 196, 244, 0.20),
+      rgba(32, 196, 244, 0.08) 48%,
+      rgba(255, 28, 104, 0.10));
+
+  border:
+    1px solid rgba(32, 196, 244, 0.32);
+
+  box-shadow:
+    0 18px 45px rgba(9, 24, 54, 0.11),
+    0 0 24px rgba(32, 196, 244, 0.08);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.tarjeta-producto {
+  position: relative;
+  z-index: 25;
+  display: flex;
+  min-width: 0;
+  height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: var(--surface);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  content-visibility: auto;
+  contain-intrinsic-size: 430px;
+
+}
+
+
+
+.visual-producto {
+  position: relative;
+  display: grid;
+  height: 210px;
+  place-items: center;
+  overflow: hidden;
+  background: linear-gradient(140deg, #22243e, #2e3451);
+  color: #9ed4ed;
+}
+
+.visual-producto.con-imagen {
+  background: #f7f8fb;
+}
+
+.imagen-producto {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 28px 18px 22px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.envoltura-hover-producto:hover .imagen-producto {
+  transform: scale(1.045);
+}
+
+.etiqueta-producto {
+  position: absolute;
+  z-index: 2;
+  top: 13px;
+  left: 14px;
+  max-width: calc(100% - 28px);
+  overflow: hidden;
+  padding: 3px 7px;
+  border-radius: 6px;
+  background: #111225d9;
+  color: #e2e6f2;
+  font-size: 10px;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.referencia-producto {
+  position: absolute;
+  z-index: 2;
+  right: 12px;
+  bottom: 10px;
+  color: #69758c;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+}
+
+.informacion-producto {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  padding: 18px;
+}
+
+.estado-producto {
+  color: var(--cyan);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.tarjeta-producto h3 {
+  display: -webkit-box;
+  min-height: 2.55em;
+  margin: 8px 0;
+  overflow: hidden;
+  font-size: clamp(15px, 1.2vw, 17px);
+  line-height: 1.27;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.tarjeta-producto p {
+  display: -webkit-box;
+  min-height: 3.9em;
+  margin: 0 0 18px;
+  overflow: hidden;
+  color: var(--suave);
+  font-size: 12px;
+  line-height: 1.45;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.fila-precio-producto {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.fila-precio-producto strong {
+  min-width: 0;
+  font-size: clamp(18px, 1.6vw, 22px);
+}
+
+.boton-agregar-producto {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  flex: none;
+  place-items: center;
+  border: 1px solid #20c4f448;
+  border-radius: 9px;
+  background: #20c4f40d;
+  color: var(--cyan);
+}
+
+.boton-agregar-producto:hover:not(:disabled) {
+  background: var(--cyan);
+  color: #101527;
+}
+
+.boton-agregar-producto:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.paginacion-productos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin: 34px 0 0;
+}
+
+.boton-pagina {
+  display: grid;
+  min-width: 39px;
+  height: 39px;
+  place-items: center;
+  padding: 0 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--foreground);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.boton-pagina:hover:not(:disabled),
+.boton-pagina.seleccionado {
+  border-color: var(--cyan);
+  background: var(--cyan);
+  color: #101527;
+}
+
+.boton-pagina:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+}
+
+.puntos-paginacion {
+  display: grid;
+  min-width: 24px;
+  height: 39px;
+  place-items: center;
+  color: var(--suave);
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   FIN · PÁGINA DE PRODUCTOS
+   ========================================================= */
+
+/* =========================================================
+   INICIO · PÁGINA DE SERVICIOS
+   Rejilla y tarjetas uniformes de servicios.
+   ========================================================= */
+/* ---------- Servicios ---------- */
+.rejilla-servicios {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 24px);
+  align-items: stretch;
+}
+
+.tarjeta-servicio {
+  display: flex;
+  min-width: 0;
+  height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: var(--surface);
+  text-align: left;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  content-visibility: auto;
+  contain-intrinsic-size: 500px;
+}
+
+.tarjeta-servicio:hover {
+  transform: translateY(-3px);
+  border-color: var(--cyan);
+  box-shadow: 0 14px 34px #08153320;
+}
+
+.visual-servicio {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: linear-gradient(145deg, #1d2742, #242849);
+}
+
+.imagen-servicio {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.marcador-servicio {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  color: var(--cyan);
+}
+
+.numero-servicio {
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: #111225cc;
+  color: #d4d8e6;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.contenido-servicio {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.cabecera-servicio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 26px;
+  color: var(--cyan);
+}
+
+.cabecera-servicio span {
+  color: var(--suave);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.tarjeta-servicio h3 {
+  margin: 16px 0 10px;
+  font-size: clamp(1.25rem, 1.8vw, 1.7rem);
+  line-height: 1.15;
+}
+
+.tarjeta-servicio p {
+  display: -webkit-box;
+  margin: 0 0 18px;
+  overflow: hidden;
+  color: var(--suave);
+  font-size: 14px;
+  line-height: 1.55;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+
+.pie-servicio {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px solid var(--border);
+}
+
+.pie-servicio small {
+  color: var(--suave);
+  font-size: 12px;
+}
+
+.pie-servicio .enlace {
+  color: var(--cyan);
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   FIN · PÁGINA DE SERVICIOS
+   ========================================================= */
+
+/* =========================================================
+   INICIO · PÁGINA DE CURSOS
+   Rejilla, tarjetas verticales, temario, metadatos y panel de ayuda.
+   ========================================================= */
+/* ---------- Cursos con imágenes verticales ---------- */
+.rejilla-cursos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 2vw, 26px);
+  align-items: stretch;
+  margin-top: 36px;
+}
+
+.tarjeta-curso {
+  display: flex;
+  min-width: 0;
+  height: 100%;
+  flex-direction: column;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: var(--surface);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  content-visibility: auto;
+  contain-intrinsic-size: 780px;
+}
+
+.tarjeta-curso:hover {
+  transform: translateY(-3px);
+  border-color: #20c4f470;
+  box-shadow: 0 14px 34px #08153320;
+}
+
+.visual-curso {
+  display: grid;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #f2f4f8;
+}
+
+.imagen-curso {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  object-fit: contain;
+}
+
+.pie-imagen-curso {
+  margin: 10px 2px 14px;
+  color: var(--suave);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.cabecera-curso {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+  color: var(--cyan);
+}
+
+.cabecera-curso span {
+  padding: 7px 9px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--suave);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.tarjeta-curso h2 {
+  display: -webkit-box;
+  min-height: 2.35em;
+  margin: 0;
+  overflow: hidden;
+  font-size: clamp(1.3rem, 1.8vw, 1.7rem);
+  line-height: 1.17;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.descripcion-curso {
+  display: -webkit-box;
+  min-height: 4.65em;
+  margin: 10px 0 16px;
+  overflow: hidden;
+  color: var(--suave);
+  font-size: 13px;
+  line-height: 1.55;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.etiqueta-temario-curso {
+  display: block;
+  color: var(--cyan);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+}
+
+.temario-curso ul {
+  margin: 8px 0 14px;
+  padding: 0;
+  list-style: none;
+}
+
+.temario-curso li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 7px 0;
+  color: var(--suave);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.temario-curso li svg {
+  flex: none;
+  margin-top: 1px;
+  color: var(--cyan);
+}
+
+.temario-curso li span {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.metadatos-curso {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 4px 0 12px;
+}
+
+.metadatos-curso span {
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--surface) 70%, var(--cyan) 8%);
+  color: var(--suave);
+  font-size: 11px;
+}
+
+.detalle-curso {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  color: var(--suave);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.detalle-curso svg {
+  flex: none;
+  color: var(--cyan);
+}
+
+.pie-curso {
+  margin-top: auto;
+}
+
+.precio-curso {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.precio-curso strong {
+  font-size: clamp(18px, 1.5vw, 22px);
+}
+
+.precio-curso span {
+  color: var(--suave);
+  font-size: 11px;
+}
+
+.tarjeta-curso .boton {
+  width: 100%;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.panel-ayuda-cursos {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.8fr) auto;
+  gap: clamp(20px, 3vw, 42px);
+  align-items: center;
+  margin-top: 26px;
+  padding: clamp(24px, 3vw, 38px);
+  border: 1px solid #20c4f466;
+  border-radius: 26px;
+  background: linear-gradient(140deg, #1c1d41, #14324b);
+  color: #fff;
+}
+
+.panel-ayuda-cursos h2 {
+  margin: 0 0 10px;
+  color: #fff;
+  font-size: clamp(1.65rem, 2.5vw, 2.4rem);
+}
+
+.panel-ayuda-cursos p {
+  max-width: 640px;
+  margin: 0;
+  color: #d0d6e7;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.panel-ayuda-cursos ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.panel-ayuda-cursos li {
+  display: flex;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid #ffffff2a;
+  font-size: 13px;
+}
+
+.panel-ayuda-cursos li span {
+  color: var(--cyan);
+  font-weight: 800;
+}
+
+.panel-ayuda-cursos .boton {
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   FIN · PÁGINA DE CURSOS
+   ========================================================= */
+
+/* =========================================================
+   INICIO · PÁGINA DE INICIO · BANNER DE CURSOS
+   Escala del banner de cursos.
+   ========================================================= */
+/* ---------- Banner de cursos del inicio ---------- */
+.curso-banner h2 {
+  font-size: clamp(2.25rem, 4vw, 4.1rem);
+}
+
+.curso-banner p {
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   FIN · PÁGINA DE INICIO · BANNER DE CURSOS
+   ========================================================= */
+
+/* =========================================================
+   INICIO · PANEL ADMINISTRADOR · ESTRUCTURA PRINCIPAL
+   Cabecera, resumen, pestañas, tablas, formularios, kits y catálogos.
+   ========================================================= */
+/* ---------- Panel de administración ---------- */
+.estructura-administrador {
+  min-width: 0;
+}
+
+.cabecera-administrador {
+  min-width: 0;
+  padding-inline: max(18px, calc((100vw - 1320px) / 2 + 18px));
+}
+
+.cabecera-administrador .logo-empresa {
+  width: 96px;
+  height: 58px;
+}
+
+.cabecera-administrador .logo-tema,
+html[data-tema="claro"] .cabecera-administrador .logo-tema {
+  width: 92px;
+  height: 92px;
+  top: -17px;
+}
+
+.admin-main {
+  width: 100%;
+  max-width: 1368px;
+  min-width: 0;
+  margin: 0 auto;
+  padding: 0 24px 60px;
+  box-sizing: border-box;
+}
+
+.panel-administracion {
+  min-width: 0;
+  margin: 0;
+  padding: 42px 0 20px;
+}
+
+.cabecera-panel-administracion {
+  margin-bottom: 24px;
+}
+
+.cabecera-panel-administracion h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+}
+
+.cabecera-panel-administracion p {
+  max-width: 760px;
+  margin: 10px 0 0;
+  color: var(--suave);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.resumen-administracion {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+.resumen-administracion>div {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+}
+
+.resumen-administracion span {
+  display: block;
+  color: var(--suave);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.resumen-administracion strong {
+  display: block;
+  margin-top: 9px;
+  color: var(--cyan);
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+}
+
+.pestanas-administracion {
+  display: flex !important;
+  width: 100% !important;
+  max-width: 100%;
+  height: auto !important;
+  justify-content: flex-start !important;
+  gap: 4px;
+  margin-bottom: 24px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.pestanas-administracion button {
+  flex: 0 0 auto !important;
+  min-height: 38px;
+  padding: 8px 12px !important;
+  font-size: 12px !important;
+  text-transform: none;
+}
+
+.cabecera-modulo-administracion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.cabecera-modulo-administracion h2 {
+  margin: 0;
+  font-size: clamp(1.55rem, 2.5vw, 2.2rem);
+}
+
+.tabla-administracion {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+}
+
+.tabla-administracion [data-slot="table-container"] {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.tabla-administracion table {
+  min-width: 760px;
+}
+
+.tabla-administracion th {
+  padding: 12px 14px;
+  color: var(--suave);
+  font-size: 11px;
+}
+
+.tabla-administracion td {
+  max-width: 360px;
+  padding: 13px 14px;
+  font-size: 12px;
+}
+
+.tabla-administracion td:first-child {
+  white-space: normal;
+}
+
+.tabla-administracion td strong {
+  display: block;
+  overflow-wrap: anywhere;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.etiqueta-destacado-administracion {
+  display: block;
+  margin-top: 3px;
+  color: var(--cyan);
+  font-size: 9px;
+}
+
+.acciones-tabla-administracion {
+  display: flex;
+  gap: 5px;
+}
+
+.caja-administracion {
+  min-width: 0;
+  padding: clamp(18px, 2.5vw, 30px);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--surface);
+}
+
+.caja-administracion h2 {
+  margin-top: 0;
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
+}
+
+.caja-administracion>p {
+  color: var(--suave);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.editor-administracion {
+  width: min(760px, calc(100vw - 28px)) !important;
+  max-width: 760px !important;
+  max-height: 90dvh;
+  overflow: hidden;
+}
+
+.formulario-entidad-administracion,
+.formulario-configuracion-administracion,
+.formulario-catalogo-administracion {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 16px;
+}
+
+.formulario-entidad-administracion {
+  max-height: calc(90dvh - 125px);
+  overflow-y: auto;
+  padding: 2px 6px 4px 1px;
+}
+
+.formulario-entidad-administracion label,
+.formulario-configuracion-administracion label,
+.formulario-catalogo-administracion label {
+  min-width: 0;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.formulario-entidad-administracion input,
+.formulario-entidad-administracion textarea,
+.formulario-entidad-administracion select,
+.formulario-configuracion-administracion input,
+.formulario-configuracion-administracion textarea,
+.formulario-catalogo-administracion input {
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  margin-top: 7px;
+  padding: 9px 11px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--background);
+  color: var(--foreground);
+  font-size: 13px;
+  box-sizing: border-box;
+}
+
+.formulario-entidad-administracion textarea,
+.formulario-configuracion-administracion textarea {
+  min-height: 86px;
+  resize: vertical;
+}
+
+.formulario-entidad-administracion select {
+  background: var(--surface);
+}
+
+.campo-ancho-administracion,
+.productos-kit-administracion,
+.boton-guardar-administracion {
+  grid-column: 1 / -1;
+}
+
+.casilla-administracion {
+  display: flex !important;
+  min-height: 42px;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 11px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--surface) 88%, var(--cyan) 3%);
+}
+
+.casilla-administracion input {
+  width: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+}
+
+.productos-kit-administracion {
+  max-height: 230px;
+  overflow-y: auto;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.productos-kit-administracion legend {
+  padding: 0 6px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.productos-kit-administracion>div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 76px;
+  gap: 10px;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.productos-kit-administracion>div:last-child {
+  border-bottom: 0;
+}
+
+.productos-kit-administracion label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.productos-kit-administracion label input {
+  width: auto;
+  min-height: 0;
+  margin: 0;
+}
+
+.productos-kit-administracion label span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.productos-kit-administracion input[type="number"] {
+  width: 76px;
+  margin: 0;
+}
+
+.selector-administracion {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 16px 0;
+}
+
+.lista-catalogos-administracion {
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+}
+
+.lista-catalogos-administracion li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.lista-catalogos-administracion li>span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.lista-catalogos-administracion small {
+  margin-left: 8px;
+  color: var(--suave);
+  font-size: 10px;
+}
+
+.lista-catalogos-administracion li>div {
+  display: flex;
+  flex: none;
+  gap: 6px;
+}
+
+.formulario-configuracion-administracion,
+.formulario-catalogo-administracion {
+  max-width: 860px;
+  margin-top: 18px;
+}
+
+.acciones-exportacion-administracion {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+
+/* =========================================================
+   FIN · PANEL ADMINISTRADOR · ESTRUCTURA PRINCIPAL
+   ========================================================= */
+
+/* =========================================================
+   INICIO · RESPONSIVIDAD · TABLET Y MÓVIL · VARIAS PÁGINAS
+   Breakpoints que adaptan Inicio, Productos, Servicios, Cursos y Administrador.
+   ========================================================= */
+/* ---------- Adaptación por tamaño ---------- */
+@media (max-width: 1180px) {
+  .rejilla-categorias-inicio {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .rejilla-ofertas {
+    grid-template-columns: 1fr;
+  }
+
+  .rejilla-productos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .rejilla-cursos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .panel-ayuda-cursos {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .panel-ayuda-cursos .boton {
+    justify-self: start;
+  }
+
+  .resumen-administracion {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1024px) {
+  .panel-filtros-productos {
+    grid-template-columns: 1fr;
+  }
+
+  .categorias-productos:not(.categorias-productos-expandidas) button:nth-child(n + 7) {
+    display: none;
+  }
+
+  .boton-desplegar-categorias {
+    display: inline-flex;
+  }
+
+  .rejilla-servicios {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .curso-banner {
+    padding: 34px;
+  }
+
+  .cabecera-administrador {
+    padding-inline: 18px;
+  }
+}
+
+@media (max-width: 780px) {
+  .titulo-seccion {
+    align-items: flex-start;
+  }
+
+  .rejilla-productos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .visual-producto {
+    height: 190px;
+  }
+
+  .tarjeta-producto h3 {
+    font-size: 15px;
+  }
+
+  .rejilla-cursos {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+    margin-inline: auto;
+  }
+
+  .panel-ayuda-cursos {
+    grid-template-columns: 1fr;
+  }
+
+  .cabecera-administrador {
+    gap: 8px;
+    padding: 9px 12px;
+  }
+
+  .cabecera-administrador>div {
+    display: none;
+  }
+
+  .cabecera-administrador nav {
+    margin-left: auto;
+  }
+
+  .cabecera-administrador .boton {
+    min-width: 38px;
+    min-height: 38px;
+    padding: 8px 10px;
+  }
+
+  .admin-main {
+    padding-inline: 14px;
+  }
+
+  .panel-administracion {
+    padding-top: 28px;
+  }
+
+  .formulario-entidad-administracion,
+  .formulario-configuracion-administracion,
+  .formulario-catalogo-administracion {
+    grid-template-columns: 1fr;
+  }
+
+  .campo-ancho-administracion,
+  .productos-kit-administracion,
+  .boton-guardar-administracion {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 620px) {
+  .cabecera {
+    height: 76px !important;
+    padding-inline: 12px !important;
+  }
+
+  .logo-empresa,
+  html[data-tema="claro"] .logo-empresa {
+    width: auto !important;
+    height: auto !important;
+    flex: 1 !important;
+  }
+
+  .logo-empresa .logo-tema,
+  html[data-tema="claro"] .logo-empresa .logo-tema {
+    width: auto !important;
+    height: 40px !important;
+    max-width: 180px !important;
+    top: unset !important;
+  }
+
+  .topbar {
+    font-size: 9px !important;
+  }
+
+  .nav,
+  .nav.abierto {
+    top: 100% !important;
+    font-size: 16px !important;
+  }
+
+  .texto-suave {
+    display: none;
+  }
+
+  .titulo-seccion {
+    gap: 12px;
+  }
+
+  .titulo-seccion>.enlace {
+    max-width: 120px;
+    font-size: 12px;
+    text-align: right;
+  }
+
+  .rejilla-categorias-inicio {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tarjeta-categoria-inicio {
+    min-height: 112px;
+    padding: 18px 9px;
+    font-size: 13px;
+  }
+
+  .tarjeta-oferta {
+    grid-template-columns: 1fr;
+  }
+
+  .visual-oferta,
+  .imagen-oferta,
+  .marcador-oferta {
+    min-height: 220px;
+  }
+
+  .contenido-oferta {
+    padding: 20px;
+  }
+
+  .categorias-productos:not(.categorias-productos-expandidas) button:nth-child(n + 5) {
+    display: none;
+  }
+
+  .categorias-productos button {
+    min-height: 36px;
+    padding: 8px 11px;
+    font-size: 12px;
+  }
+
+  .resumen-productos {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .rejilla-productos {
+    grid-template-columns: 1fr;
+  }
+
+  .visual-producto {
+    height: min(270px, 64vw);
+  }
+
+  .informacion-producto {
+    padding: 17px;
+  }
+
+  .tarjeta-producto h3 {
+    min-height: 0;
+    font-size: 17px;
+  }
+
+  .tarjeta-producto p {
+    min-height: 0;
+    font-size: 13px;
+  }
+
+  .paginacion-productos {
+    gap: 5px;
+  }
+
+  .boton-pagina {
+    min-width: 35px;
+    height: 35px;
+    padding-inline: 8px;
+    font-size: 12px;
+  }
+
+  .puntos-paginacion {
+    height: 35px;
+  }
+
+  .rejilla-servicios {
+    grid-template-columns: 1fr;
+  }
+
+  .tarjeta-servicio h3 {
+    font-size: 1.35rem;
+  }
+
+  .tarjeta-servicio p {
+    font-size: 13px;
+  }
+
+  .curso-banner {
+    margin-block: 48px;
+    padding: 26px 22px;
+  }
+
+  .curso-banner>svg,
+  .curso-grande {
+    display: none;
+  }
+
+  .panel-ayuda-cursos {
+    padding: 22px;
+  }
+
+  .panel-ayuda-cursos .boton {
+    width: 100%;
+    justify-content: center;
+    white-space: normal;
+  }
+
+  .resumen-administracion {
+    grid-template-columns: 1fr;
+  }
+
+  .pestanas-administracion {
+    margin-inline: -2px;
+    padding-bottom: 5px !important;
+  }
+
+  .cabecera-modulo-administracion {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .cabecera-modulo-administracion .boton {
+    align-self: flex-start;
+  }
+
+  .tabla-administracion {
+    overflow: visible;
+    border: 0;
+    background: transparent;
+  }
+
+  .tabla-administracion [data-slot="table-container"] {
+    overflow: visible;
+  }
+
+  .tabla-administracion table,
+  .tabla-administracion tbody {
+    display: block;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .tabla-administracion thead {
+    display: none;
+  }
+
+  .tabla-administracion tbody {
+    display: grid;
+    gap: 12px;
+  }
+
+  .tabla-administracion tr {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(110px, auto);
+    gap: 8px 12px;
+    padding: 14px;
+    border: 1px solid var(--border) !important;
+    border-radius: 15px;
+    background: var(--surface);
+  }
+
+  .tabla-administracion td {
+    display: flex;
+    min-width: 0;
+    max-width: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 4px 0 !important;
+    white-space: normal !important;
+  }
+
+  .tabla-administracion td::before {
+    content: attr(data-etiqueta);
+    flex: none;
+    color: var(--suave);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .tabla-administracion td:first-child {
+    grid-column: 1 / -1;
+    display: block;
+    padding-bottom: 10px !important;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .tabla-administracion td:first-child::before {
+    display: none;
+  }
+
+  .tabla-administracion td:nth-child(4),
+  .tabla-administracion td:nth-child(5) {
+    align-self: end;
+  }
+
+  .acciones-tabla-administracion {
+    margin-left: auto;
+  }
+
+  .editor-administracion {
+    width: calc(100vw - 18px) !important;
+    max-width: none !important;
+    max-height: 94dvh;
+    padding: 18px !important;
+  }
+
+  .formulario-entidad-administracion {
+    max-height: calc(94dvh - 115px);
+  }
+
+  .productos-kit-administracion>div {
+    grid-template-columns: minmax(0, 1fr) 64px;
+  }
+
+  .productos-kit-administracion input[type="number"] {
+    width: 64px;
+  }
+
+  .lista-catalogos-administracion li {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .lista-catalogos-administracion li>div {
+    width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .cabecera-administrador .logo-empresa {
+    width: 74px !important;
+  }
+
+  .cabecera-administrador .boton {
+    min-width: 36px;
+    padding-inline: 8px;
+  }
+
+  .categorias-productos {
+    gap: 6px;
+  }
+
+  .boton-pagina {
+    min-width: 32px;
+    height: 32px;
+    font-size: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .tarjeta-categoria-inicio,
+  .tarjeta-oferta,
+  .tarjeta-producto,
+  .tarjeta-servicio,
+  .tarjeta-curso {
+    transition: none;
+  }
+}
+
+
+/* =========================================================
+   FIN · RESPONSIVIDAD · TABLET Y MÓVIL · VARIAS PÁGINAS
+   ========================================================= */
+
+/* =========================================================
+   INICIO · PANEL ADMINISTRADOR · SELECTOR DE ARCHIVOS
+   Estilos del input de imagen.
+   ========================================================= */
+/* Selector de archivos del administrador. */
+.selector-imagen-administracion small {
+  display: block;
+  margin-top: 6px;
+  color: var(--suave);
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.selector-imagen-administracion input[type="file"] {
+  padding: 7px;
+  cursor: pointer;
+}
+
+.selector-imagen-administracion input[type="file"]::file-selector-button {
+  margin-right: 10px;
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--foreground);
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   FIN · PANEL ADMINISTRADOR · SELECTOR DE ARCHIVOS
+   ========================================================= */
+
+/* =========================================================
+   INICIO · NAVEGACIÓN · ACTUALIZACIÓN TESTIMONIOS
+   Ajuste de separación de navegación.
+   ========================================================= */
+/* ========================================================================== */
+/* CONTENIDO INSTITUCIONAL, TESTIMONIOS Y ADMINISTRACIÓN 2026                */
+/* ========================================================================== */
+
+/* Navegación con la nueva pantalla de testimonios. */
+.cabecera .nav {
+  gap: clamp(14px, 2vw, 30px);
+}
+
+
+/* =========================================================
+   FIN · NAVEGACIÓN · ACTUALIZACIÓN TESTIMONIOS
+   ========================================================= */
+
+/* =========================================================
+   INICIO · PÁGINA DE INICIO · BENEFICIOS Y CONVENIOS
+   Tarjetas iniciales de beneficios/convenios.
+   ========================================================= */
+/* ---------- Inicio: beneficios y convenios ---------- */
+.seccion-beneficios-inicio {
+  padding-top: clamp(54px, 7vw, 96px);
+}
+
+.rejilla-beneficios-inicio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: clamp(14px, 1.8vw, 22px);
+}
+
+.tarjeta-beneficio-inicio {
+  display: grid;
+  grid-template-rows: minmax(190px, 0.85fr) auto;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: var(--surface);
+  content-visibility: auto;
+  contain-intrinsic-size: 420px;
+}
+
+.tarjeta-beneficio-inicio.beneficio-principal {
+  grid-column: span 1;
+  border-color: color-mix(in srgb, var(--cyan) 60%, var(--border));
+}
+
+.tarjeta-beneficio-inicio:only-child {
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.2fr);
+  grid-template-rows: none;
+}
+
+.visual-beneficio-inicio {
+  display: grid;
+  min-height: 190px;
+  place-items: center;
+  overflow: hidden;
+  color: var(--cyan);
+  background: linear-gradient(145deg, color-mix(in srgb, var(--cyan) 10%, var(--surface)), var(--surface));
+}
+
+.visual-beneficio-inicio img {
+  width: 100%;
+  height: 100%;
+  min-height: 190px;
+  object-fit: cover;
+}
+
+.contenido-beneficio-inicio {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 10px;
+  padding: clamp(18px, 2vw, 26px);
+}
+
+.contenido-beneficio-inicio>span {
+  color: var(--cyan);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.contenido-beneficio-inicio h3 {
+  margin: 0;
+  font-size: clamp(1.15rem, 1.6vw, 1.55rem);
+  line-height: 1.13;
+}
+
+.contenido-beneficio-inicio p {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: var(--suave);
+  font-size: 13px;
+  line-height: 1.55;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+
+.contenido-beneficio-inicio .enlace {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+
+/* =========================================================
+   FIN · PÁGINA DE INICIO · BENEFICIOS Y CONVENIOS
+   ========================================================= */
+
+/* =========================================================
+   INICIO · PÁGINA SOBRE NOSOTROS · CONVENIOS
+   Rejilla y tarjetas de convenios.
+   ========================================================= */
+/* ---------- Sobre nosotros: convenios ---------- */
+.seccion-convenios-nosotros {
+  margin-top: clamp(58px, 8vw, 110px);
+}
+
+.rejilla-convenios-nosotros {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.tarjeta-convenio-nosotros {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.38fr) minmax(0, 0.62fr);
+  min-height: 250px;
+  padding: 30px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: var(--surface);
+}
+
+.visual-convenio-nosotros {
+  display: grid;
+  min-height: 250px;
+  place-items: center;
+  overflow: hidden;
+  color: var(--cyan);
+  background: color-mix(in srgb, var(--cyan) 7%, var(--surface));
+}
+
+.visual-convenio-nosotros img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contenido-convenio-nosotros {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: clamp(20px, 2.5vw, 30px);
+}
+
+.etiqueta-convenio {
+  color: var(--cyan);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.contenido-convenio-nosotros h3 {
+  margin: 0;
+  font-size: clamp(1.25rem, 1.8vw, 1.8rem);
+  line-height: 1.12;
+}
+
+.contenido-convenio-nosotros p {
+  margin: 0;
+  color: var(--suave);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.contenido-convenio-nosotros .enlace {
+  align-self: flex-start;
+  margin-top: 4px;
+}
+
+
+/* =========================================================
+   FIN · PÁGINA SOBRE NOSOTROS · CONVENIOS
+   ========================================================= */
+
+/* =========================================================
+   INICIO · PÁGINA DE TESTIMONIOS
+   Portada, grid tipo Shorts/Reels, video, información y TikTok.
+   ========================================================= */
+/* ---------- Testimonios ---------- */
+.pagina-testimonios {
+  margin-top: clamp(16px, 2.5vw, 28px);
+  padding-top: 0;
+}
+
+.portada-testimonios {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 300px);
+  gap: clamp(24px, 4vw, 60px);
+  align-items: center;
+  margin-bottom: clamp(30px, 4vw, 50px);
+  padding: clamp(22px, 3.5vw, 38px) clamp(24px, 4vw, 48px);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--cyan) 9%, var(--surface)), var(--surface));
+}
+
+.portada-testimonios h1 {
+  max-width: 850px;
+  margin: 8px 0 16px;
+  font-size: clamp(2.2rem, 5vw, 5.4rem);
+  line-height: 0.98;
+}
+
+.portada-testimonios p {
+  max-width: 720px;
+  margin: 0;
+  color: var(--suave);
+  font-size: clamp(14px, 1.4vw, 18px);
+  line-height: 1.65;
+}
+
+.sello-testimonios {
+  display: grid;
+  aspect-ratio: 1;
+  place-items: center;
+  align-content: center;
+  gap: 8px;
+  border: 1px solid color-mix(in srgb, var(--cyan) 55%, var(--border));
+  border-radius: 50%;
+  color: var(--cyan);
+  text-align: center;
+}
+
+.sello-testimonios strong {
+  font-size: clamp(1.5rem, 3vw, 2.7rem);
+  line-height: 1;
+}
+
+.sello-testimonios span {
+  color: var(--suave);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+/* =========================================================
+   TESTIMONIOS · GRID TIPO SHORTS / REELS
+   ========================================================= */
+
+.rejilla-testimonios {
+  display: grid;
+
+  /*
+   * MUY IMPORTANTE:
+   * las columnas tienen ancho máximo.
+   * Un solo video NO se expande a toda la pantalla.
+   */
+  grid-template-columns:
+    repeat(auto-fit,
+      minmax(240px, 285px));
+
+  justify-content: center;
+  align-items: stretch;
+
+  gap:
+    clamp(18px, 2.2vw, 28px);
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   TARJETA
+   ========================================================= */
+
+.tarjeta-testimonio {
+  display: grid;
+
+  grid-template-rows:
+    auto minmax(185px, 1fr);
+
+  width: 100%;
+  max-width: 285px;
+  margin-inline: auto;
+
+  min-width: 0;
+  height: 100%;
+
+  overflow: hidden;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 22px;
+
+  background: var(--surface);
+
+  box-shadow:
+    0 12px 30px rgba(8, 21, 51, 0.06);
+
+  content-visibility: auto;
+
+  contain-intrinsic-size:
+    690px;
+}
+
+
+/* =========================================================
+   VIDEO VERTICAL
+   ========================================================= */
+
+.contenedor-video-testimonio {
+  position: relative;
+
+  width: 100%;
+
+  /*
+   * Proporción Shorts / Reels / TikTok
+   */
+  aspect-ratio: 9 / 16;
+
+  overflow: hidden;
+
+  background:
+    #080b15;
+}
+
+
+/*
+ * Todos los reproductores ocupan
+ * EXACTAMENTE el mismo espacio.
+ */
+.video-testimonio,
+.video-testimonio-externo,
+.video-testimonio-archivo,
+.enlace-video-testimonio,
+.video-testimonio-vacio {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+}
+
+
+/* Videos propios */
+
+.video-testimonio-archivo {
+  object-fit: cover;
+
+  background:
+    #080b15;
+}
+
+
+/* Iframes */
+
+.video-testimonio-externo {
+  background:
+    #080b15;
+}
+
+
+/*
+ * TikTok ya trabaja naturalmente
+ * con formato vertical.
+ */
+.video-tiktok {
+  object-fit: cover;
+}
+
+
+/*
+ * YouTube Shorts o videos normales
+ * mantienen el reproductor dentro
+ * del mismo cuadro.
+ */
+.video-youtube {
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   RESPALDO / SIN VIDEO
+   ========================================================= */
+
+.enlace-video-testimonio,
+.video-testimonio-vacio {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  padding: 20px;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(circle at 50% 35%,
+      rgba(32, 196, 244, 0.18),
+      transparent 55%),
+    #11152a;
+
+  text-align: center;
+}
+
+
+.enlace-video-testimonio {
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.enlace-video-testimonio:hover {
+  color: var(--cyan);
+
+  background:
+    radial-gradient(circle at 50% 35%,
+      rgba(32, 196, 244, 0.26),
+      transparent 58%),
+    #11152a;
+}
+
+
+/* =========================================================
+   INFORMACIÓN DEL TESTIMONIO
+   ========================================================= */
+
+.contenido-testimonio {
+  display: flex;
+
+  min-width: 0;
+
+  flex-direction: column;
+
+  padding:
+    18px 18px 20px;
+}
+
+
+.etiqueta-testimonio {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-bottom: 11px;
+
+  color: var(--cyan);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing:
+    0.08em;
+}
+
+
+.contenido-testimonio h2 {
+  display: -webkit-box;
+
+  margin:
+    0 0 8px;
+
+  overflow: hidden;
+
+  color: var(--foreground);
+
+  font-size:
+    clamp(1.12rem,
+      1.7vw,
+      1.45rem);
+
+  line-height: 1.15;
+
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+
+.cliente-testimonio {
+  display: block;
+
+  margin-bottom: 10px;
+
+  overflow: hidden;
+
+  color: var(--foreground);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+.contenido-testimonio p {
+  display: -webkit-box;
+
+  margin: 0;
+
+  overflow: hidden;
+
+  color: var(--suave);
+
+  font-size: 12px;
+
+  line-height: 1.55;
+
+  -webkit-box-orient: vertical;
+
+  /*
+   * Así una descripción larguísima
+   * no cambia el tamaño de una tarjeta.
+   */
+  -webkit-line-clamp: 4;
+}
+
+.estado-testimonios-vacio {
+  display: grid;
+  max-width: 760px;
+  min-height: 300px;
+  margin-inline: auto;
+  place-items: center;
+  align-content: center;
+  gap: 10px;
+  padding: 34px;
+  border: 1px dashed var(--border);
+  border-radius: 22px;
+  color: var(--suave);
+  text-align: center;
+}
+
+.estado-testimonios-vacio h2,
+.estado-testimonios-vacio p {
+  margin: 0;
+}
+
+.seccion-tiktok-testimonios {
+  margin-top: clamp(58px, 8vw, 100px);
+}
+
+.rejilla-tiktok-testimonios {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.tarjeta-tiktok-testimonios {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--surface);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.tarjeta-tiktok-testimonios:hover {
+  transform: translateY(-2px);
+  border-color: var(--cyan);
+}
+
+.tarjeta-tiktok-testimonios>svg:first-child {
+  color: var(--cyan);
+}
+
+.tarjeta-tiktok-testimonios div {
+  min-width: 0;
+}
+
+.tarjeta-tiktok-testimonios strong,
+.tarjeta-tiktok-testimonios span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tarjeta-tiktok-testimonios strong {
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.tarjeta-tiktok-testimonios span {
+  margin-top: 4px;
+  color: var(--suave);
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   FIN · PÁGINA DE TESTIMONIOS
+   ========================================================= */
+
+/* =========================================================
+   INICIO · ESTRUCTURA GLOBAL · FOOTER INFORMATIVO
+   Identidad, redes, contactos, ubicación y horarios.
+   ========================================================= */
+
+
+/* =========================================================
+   LOGO DEL FOOTER · ESCRITORIO
+   ========================================================= */
+
+.footer-top.footer-redisenado .logo-empresa {
+  width: 136px;
+  height: 78px;
+
+  max-width: 100%;
+
+  margin-bottom: 18px;
+}
+
+
+.footer-top.footer-redisenado .logo-tema,
+html[data-tema="claro"]
+.footer-top.footer-redisenado
+.logo-tema {
+  width: 136px;
+  height: 136px;
+
+  top: -27px;
+}
+
+/* ---------- Footer informativo ---------- */
+.pie-pagina-principal {
+  overflow: hidden;
+}
+
+.footer-top.footer-redisenado {
+  display: grid;
+  grid-template-columns: minmax(190px, 1.25fr) minmax(130px, 0.7fr) minmax(210px, 1fr) minmax(220px, 1.15fr);
+  gap: clamp(24px, 4vw, 58px);
+  align-items: start;
+}
+
+.footer-identidad,
+.footer-columna {
+  min-width: 0;
+}
+
+.footer-identidad {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-identidad-superior {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.footer-eslogan {
+  max-width: 280px;
+  margin: 0;
+}
+
+.redes-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.redes-footer a {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--foreground) !important;
+}
+
+.redes-footer a:hover {
+  border-color: var(--cyan);
+  color: var(--cyan) !important;
+}
+
+.footer-columna {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.footer-columna>span {
+  margin-bottom: 4px;
+  color: var(--foreground) !important;
+  font-size: 11px !important;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.footer-contactos button {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+  color: var(--foreground);
+  text-align: left;
+  cursor: pointer;
+}
+
+.footer-contactos button>svg {
+  color: var(--cyan);
+}
+
+.footer-contactos button span,
+.footer-contactos button strong,
+.footer-contactos button small {
+  display: block;
+}
+
+.footer-contactos button strong {
+  font-size: 12px;
+}
+
+.footer-contactos button small {
+  margin-top: 2px;
+  color: var(--suave);
+  font-size: 10px;
+}
+
+.dato-footer {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 9px;
+  align-items: start;
+}
+
+.dato-footer>svg {
+  margin-top: 2px;
+  color: var(--cyan);
+}
+
+.dato-footer p {
+  margin: 0;
+  white-space: pre-line;
+}
+
+.horarios-footer {
+  white-space: pre-line !important;
+}
+
+.enlace-ubicacion-footer {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 5px;
+  color: var(--cyan) !important;
+  font-size: 12px !important;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   FIN · ESTRUCTURA GLOBAL · FOOTER INFORMATIVO
+   ========================================================= */
+
+/* =========================================================
+   INICIO · PANEL ADMINISTRADOR · FILTROS Y PAGINACIÓN
+   Categorías, buscador y paginación del administrador.
+   ========================================================= */
+/* ---------- Filtros del administrador ---------- */
+.filtros-productos-administracion {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 340px);
+  gap: 16px;
+  align-items: start;
+  margin: 6px 0 18px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+}
+
+.categorias-administracion {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.categorias-administracion button,
+.boton-categorias-administracion,
+.paginacion-administracion button {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--foreground);
+  cursor: pointer;
+}
+
+.categorias-administracion button {
+  min-height: 34px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.categorias-administracion button.seleccionado {
+  border-color: var(--cyan);
+  background: var(--cyan);
+  color: #101527;
+}
+
+.boton-categorias-administracion {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  margin-top: 9px;
+  padding: 7px 0;
+  border: 0;
+  color: var(--cyan);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.buscador-productos-administracion {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  min-height: 42px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--background);
+}
+
+.buscador-productos-administracion svg {
+  flex: none;
+  color: var(--suave);
+}
+
+.buscador-productos-administracion input {
+  min-width: 0;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--foreground);
+  font: inherit;
+  font-size: 12px;
+}
+
+.paginacion-administracion {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 20px;
+}
+
+.paginacion-administracion button {
+  display: grid;
+  min-width: 34px;
+  height: 34px;
+  padding: 0 9px;
+  place-items: center;
+  border-radius: 9px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.paginacion-administracion button.seleccionado {
+  border-color: var(--cyan);
+  background: var(--cyan);
+  color: #101527;
+}
+
+.paginacion-administracion button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.paginacion-administracion span {
+  display: grid;
+  height: 34px;
+  place-items: center;
+  color: var(--suave);
+}
+
+.aviso-archivo-administracion {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px solid color-mix(in srgb, var(--cyan) 35%, var(--border));
+  border-radius: 10px;
+  color: var(--suave);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   FIN · PANEL ADMINISTRADOR · FILTROS Y PAGINACIÓN
+   ========================================================= */
+
+/* =========================================================
+   INICIO · RESPONSIVIDAD · CONTENIDO INSTITUCIONAL, TESTIMONIOS, FOOTER Y ADMIN
+   Breakpoints posteriores combinados.
+   ========================================================= */
+/* ---------- Adaptación tablet ---------- */
+@media (max-width: 1050px) {
+  .logo-empresa,
+  html[data-tema="claro"] .logo-empresa {
+    flex: 1 !important;
+  }
+
+  .cabecera .nav {
+    gap: 14px;
+    font-size: 12px;
+  }
+
+  .rejilla-beneficios-inicio {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tarjeta-beneficio-inicio:first-child:last-child,
+  .tarjeta-beneficio-inicio:nth-child(3):last-child {
+    grid-column: 1 / -1;
+  }
+
+  .rejilla-convenios-nosotros {
+    grid-template-columns: 1fr;
+  }
+
+  .rejilla-tiktok-testimonios {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-top.footer-redisenado {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+
+  .rejilla-beneficios-inicio,
+  .rejilla-tiktok-testimonios,
+  .footer-top.footer-redisenado {
+    grid-template-columns: 1fr;
+  }
+
+  .tarjeta-beneficio-inicio:first-child:last-child,
+  .tarjeta-beneficio-inicio:nth-child(3):last-child {
+    grid-column: auto;
+  }
+
+  .tarjeta-convenio-nosotros {
+    grid-template-columns: 1fr;
+  }
+
+  .visual-convenio-nosotros {
+    min-height: 210px;
+    max-height: 300px;
+  }
+
+  .portada-testimonios {
+    grid-template-columns: 1fr;
+    padding: 26px 20px;
+  }
+
+  .sello-testimonios {
+    width: min(190px, 58vw);
+    justify-self: center;
+  }
+
+  .filtros-productos-administracion {
+    grid-template-columns: 1fr;
+  }
+
+  .categorias-administracion:not(.categorias-administracion-expandidas) button:nth-child(n + 7) {
+    display: none;
+  }
+
+  .boton-categorias-administracion {
+    display: inline-flex;
+  }
+
+  .footer-identidad>p {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 520px) {
+  .rejilla-beneficios-inicio {
+    gap: 12px;
+  }
+
+  .tarjeta-beneficio-inicio {
+    grid-template-rows: 165px auto;
+  }
+
+  .tarjeta-beneficio-inicio:only-child {
+    grid-template-columns: 1fr;
+    grid-template-rows: 165px auto;
+  }
+
+  .visual-beneficio-inicio,
+  .visual-beneficio-inicio img {
+    min-height: 165px;
+  }
+
+  .portada-testimonios h1 {
+    font-size: clamp(2rem, 12vw, 3.35rem);
+  }
+
+  .contenedor-video-testimonio {
+    aspect-ratio: 9 / 16;
+  }
+
+  .contenido-testimonio {
+    padding: 18px;
+  }
+
+  .filtros-productos-administracion {
+    margin-inline: -4px;
+    padding: 12px;
+  }
+
+  .categorias-administracion button {
+    font-size: 10px;
+  }
+}
+
+.footer-top.footer-redisenado .redes-footer a,
+.footer-top.footer-redisenado .redes-footer a:not(.marca):not(.logo-empresa) {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  margin: 0;
+  padding: 0;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--foreground);
+  font-size: 0;
+}
+
+.footer-top.footer-redisenado .footer-columna>a:not(.enlace-ubicacion-footer) {
+  margin-bottom: 3px;
+  font-size: 13px;
+}
+
+@media (max-width: 1024px) {
+  .categorias-administracion:not(.categorias-administracion-expandidas) button:nth-child(n + 7) {
+    display: none;
+  }
+
+  .boton-categorias-administracion {
+    display: inline-flex;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   FIN · RESPONSIVIDAD · CONTENIDO INSTITUCIONAL, TESTIMONIOS, FOOTER Y ADMIN
+   ========================================================= */
+
+/* =========================================================
+   INICIO · PANEL ADMINISTRADOR · IMAGEN FLOTANTE EN TABLA
+   Image Reveal, tablet, móvil y accesibilidad.
+   ========================================================= */
+/* =========================================================
+   ADMINISTRADOR · IMAGEN FLOTANTE EN LA TABLA
+   ========================================================= */
+
+.registro-imagen-administracion {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  min-width: 0;
+  max-width: 100%;
+
+  outline: none;
+
+  cursor: default;
+}
+
+
+/* El texto continúa comportándose como antes */
+
+.contenido-registro-administracion {
+  min-width: 0;
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   IMAGEN
+   ========================================================= */
+
+.imagen-flotante-tabla-administracion {
+  position: absolute;
+
+  z-index: 300;
+
+  top: 50%;
+  left: -125px;
+
+  width: 105px;
+  height: 135px;
+
+  object-fit: cover;
+
+  border:
+    1px solid color-mix(in srgb,
+      var(--cyan) 40%,
+      var(--border));
+
+  border-radius: 12px;
+
+  background: var(--surface);
+
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.28);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  filter: blur(6px);
+
+  transform:
+    translateY(-50%) translateX(15px) rotate(-4deg) scale(0.82);
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease,
+    filter 0.3s ease,
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+
+/* Cuando el cursor pasa por el nombre */
+
+.fila-administracion-con-imagen:hover .imagen-flotante-tabla-administracion,
+.registro-imagen-administracion:focus .imagen-flotante-tabla-administracion,
+.registro-imagen-administracion:focus-within .imagen-flotante-tabla-administracion {
+  opacity: 1;
+
+  visibility: visible;
+
+  filter: blur(0);
+
+  transform:
+    translateY(-50%) translateX(0) rotate(-2deg) scale(1);
+}
+
+
+/* Resaltado muy ligero del nombre */
+
+.registro-imagen-administracion:hover .contenido-registro-administracion strong,
+.registro-imagen-administracion:focus .contenido-registro-administracion strong {
+  color: var(--cyan);
+}
+
+
+/* =========================================================
+   IMPORTANTE:
+   permitir que la imagen sobresalga de la tabla en escritorio
+   ========================================================= */
+
+@media (min-width: 761px) {
+
+  .tabla-administracion {
+    overflow: visible;
+  }
+
+  .tabla-administracion [data-slot="table-container"] {
+    overflow: visible;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (min-width: 761px) and (max-width: 1050px) {
+
+  .imagen-flotante-tabla-administracion {
+    left: -105px;
+
+    width: 88px;
+    height: 115px;
+  }
+
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+  .registro-imagen-administracion {
+    width: 100%;
+  }
+
+  /*
+   * En teléfono no existe hover real.
+   * Al tocar/focalizar el nombre, la imagen aparece
+   * encima de la tarjeta.
+   */
+
+  .imagen-flotante-tabla-administracion {
+    top: auto;
+    bottom: calc(100% + 10px);
+
+    left: 0;
+
+    width: 110px;
+    height: 140px;
+
+    transform:
+      translateY(8px) rotate(-2deg) scale(0.9);
+  }
+
+  .registro-imagen-administracion:focus .imagen-flotante-tabla-administracion,
+  .registro-imagen-administracion:focus-within .imagen-flotante-tabla-administracion {
+    transform:
+      translateY(0) rotate(0) scale(1);
+  }
+
+}
+
+
+/* =========================================================
+   ACCESIBILIDAD
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .imagen-flotante-tabla-administracion {
+    transition: none;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.seccion-beneficios-inicio {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+}
+
+
+
+/* =========================================================
+   FIN · PANEL ADMINISTRADOR · IMAGEN FLOTANTE EN TABLA
+   ========================================================= */
+
+/* =========================================================
+   INICIO · PÁGINA DE INICIO · CONVENIOS ANIMADOS · BLOQUE ORIGINAL
+   Animated Testimonials adaptado y sus breakpoints.
+   ========================================================= */
+/* =========================================================
+   INICIO · CONVENIOS ANIMADOS
+   Inspirado en Animated Testimonials de Aceternity UI
+   ========================================================= */
+
+.convenios-animados {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+  width: min(1080px, 100%);
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.95fr) minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: clamp(40px, 7vw, 90px);
+
+  padding:
+    clamp(25px, 4vw, 50px) clamp(8px, 2vw, 20px);
+}
+
+
+/* =========================================================
+   IMÁGENES
+   ========================================================= */
+
+.convenios-animados-visual {
+  position: relative;
+
+  min-width: 0;
+}
+
+
+.convenios-animados-imagenes {
+  position: relative;
+
+  width: min(100%, 420px);
+  height: clamp(340px, 42vw, 460px);
+
+  margin: 0 auto;
+}
+
+
+.convenio-animado-imagen-contenedor {
+  position: absolute;
+  inset: 0;
+
+  transform-origin: bottom center;
+
+  border-radius: 28px;
+
+  overflow: hidden;
+
+  background: var(--surface);
+
+  border:
+    1px solid color-mix(in srgb,
+      var(--cyan) 15%,
+      var(--border));
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.18);
+}
+
+
+.convenio-animado-imagen {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  user-select: none;
+}
+
+
+/* Si no se cargó imagen en Supabase */
+
+.convenio-animado-sin-imagen {
+  display: flex;
+
+  width: 100%;
+  height: 100%;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  padding: 30px;
+
+  text-align: center;
+
+  color: var(--cyan);
+
+  background:
+    radial-gradient(circle at 50% 30%,
+      color-mix(in srgb,
+        var(--cyan) 14%,
+        transparent),
+      transparent 55%),
+    var(--surface);
+}
+
+
+.convenio-animado-sin-imagen span {
+  max-width: 260px;
+
+  color: var(--foreground);
+
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+
+/* Contador */
+
+.contador-convenio-animado {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 4px;
+
+  margin:
+    18px auto 0;
+
+  width: min(100%, 420px);
+}
+
+
+.contador-convenio-animado strong {
+  color: var(--foreground);
+
+  font-size: 15px;
+}
+
+
+.contador-convenio-animado span {
+  color: var(--suave);
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   INFORMACIÓN
+   ========================================================= */
+
+.convenios-animados-contenido {
+  display: flex;
+
+  min-width: 0;
+  min-height: 360px;
+
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding:
+    clamp(10px, 2vw, 20px) 0;
+}
+
+
+.convenio-animado-informacion {
+  min-width: 0;
+}
+
+
+.etiqueta-convenio-animado {
+  display: inline-block;
+
+  margin-bottom: 14px;
+
+  color: var(--magenta);
+
+  font-family: monospace;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.15em;
+}
+
+
+.convenio-animado-informacion h3 {
+  max-width: 620px;
+
+  margin: 0;
+
+  color: var(--foreground);
+
+  font-size:
+    clamp(1.8rem, 4vw, 3.5rem);
+
+  font-weight: 800;
+
+  line-height: 0.98;
+
+  letter-spacing: -0.04em;
+}
+
+
+/* Descripción animada */
+
+.descripcion-convenio-animado {
+  max-width: 650px;
+
+  margin:
+    clamp(22px, 4vw, 38px) 0 0;
+
+  color: var(--suave);
+
+  font-size:
+    clamp(1rem, 1.8vw, 1.2rem);
+
+  line-height: 1.75;
+}
+
+
+.palabra-convenio-animado {
+  display: inline-block;
+}
+
+
+/* Enlace */
+
+.enlace-convenio-animado {
+  margin-top: 28px;
+}
+
+
+/* =========================================================
+   CONTROLES
+   ========================================================= */
+
+.controles-convenios-animados {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding-top:
+    clamp(30px, 5vw, 55px);
+}
+
+
+.controles-convenios-animados button {
+  display: inline-flex;
+
+  width: 42px;
+  height: 42px;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 999px;
+
+  color: var(--foreground);
+
+  background:
+    color-mix(in srgb,
+      var(--surface) 90%,
+      transparent);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    background 0.25s ease;
+}
+
+
+.controles-convenios-animados button:hover {
+  color: var(--cyan);
+
+  border-color:
+    color-mix(in srgb,
+      var(--cyan) 50%,
+      var(--border));
+
+  background:
+    color-mix(in srgb,
+      var(--cyan) 8%,
+      var(--surface));
+}
+
+
+.controles-convenios-animados button:first-child:hover {
+  transform:
+    translateX(-3px) rotate(-8deg);
+}
+
+
+.controles-convenios-animados button:last-child:hover {
+  transform:
+    translateX(3px) rotate(8deg);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .convenios-animados {
+    grid-template-columns:
+      minmax(0, 0.9fr) minmax(0, 1fr);
+
+    gap: 35px;
+  }
+
+
+  .convenios-animados-imagenes {
+    height: 350px;
+  }
+
+
+  .convenios-animados-contenido {
+    min-height: 330px;
+  }
+
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .convenios-animados {
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+
+    padding:
+      20px 0 10px;
+  }
+
+
+  .convenios-animados-visual {
+    width: 100%;
+  }
+
+
+  .convenios-animados-imagenes {
+    width:
+      min(calc(100% - 30px),
+        390px);
+
+    height:
+      clamp(300px,
+        105vw,
+        410px);
+  }
+
+
+  .contador-convenio-animado {
+    width:
+      min(calc(100% - 30px),
+        390px);
+  }
+
+
+  .convenios-animados-contenido {
+    min-height: auto;
+
+    padding:
+      8px 4px;
+  }
+
+
+  .convenio-animado-informacion h3 {
+    font-size:
+      clamp(1.8rem, 9vw, 2.7rem);
+
+    line-height: 1.02;
+  }
+
+
+  .descripcion-convenio-animado {
+    margin-top: 20px;
+
+    font-size: 0.98rem;
+
+    line-height: 1.65;
+  }
+
+
+  .controles-convenios-animados {
+    padding-top: 28px;
+  }
+
+}
+
+
+/* =========================================================
+   TELÉFONOS PEQUEÑOS
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+  .convenios-animados-imagenes {
+    height: 310px;
+  }
+
+
+  .convenio-animado-imagen-contenedor {
+    border-radius: 20px;
+  }
+
+
+  .controles-convenios-animados button {
+    width: 39px;
+    height: 39px;
+  }
+
+}
+
+
+
+
+
+@media (hover: none),
+(pointer: coarse) {
+
+  .envoltura-hover-producto {
+    padding: 4px;
+  }
+
+  .fondo-hover-producto {
+    display: none;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   FIN · PÁGINA DE INICIO · CONVENIOS ANIMADOS · BLOQUE ORIGINAL
+   ========================================================= */
+
+/* =========================================================
+   INICIO · PÁGINA DE PRODUCTOS · APARICIÓN AL SCROLL
+   Animación de revelado de tarjetas.
+   ========================================================= */
+/* =========================================================
+   PRODUCTOS · APARICIÓN AL HACER SCROLL
+   ========================================================= */
+
+.tarjeta-producto.revelar {
+  opacity: 0;
+
+  transform:
+    translateY(32px) scale(0.985);
+
+  transition:
+    opacity 0.75s ease var(--retardo, 0ms),
+    transform 0.75s cubic-bezier(0.2, 0.7, 0.2, 1) var(--retardo, 0ms),
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.tarjeta-producto.revelar.revelado {
+  opacity: 1;
+
+  transform:
+    translateY(0) scale(1);
+}
+
+
+/* Si el usuario entra con teclado, nunca ocultamos la tarjeta */
+
+.tarjeta-producto.revelar:focus-within {
+  opacity: 1;
+
+  transform:
+    translateY(0) scale(1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   FIN · PÁGINA DE PRODUCTOS · APARICIÓN AL SCROLL
+   ========================================================= */
+
+/* =========================================================
+   INICIO · PÁGINA DE PRODUCTOS · BUSCADOR GOOEY
+   Entrada pegajosa, modos, correcciones visuales y responsive.
+   ========================================================= */
+/* =========================================================
+   PRODUCTOS · BUSCADOR GOOEY
+   Inspirado en Gooey Input de Aceternity UI
+   ========================================================= */
+
+.entrada-busqueda-gooey {
+  --ancho-busqueda-colapsada: 132px;
+  --ancho-busqueda-expandida: 330px;
+  --desplazamiento-busqueda: 58px;
+
+  position: relative;
+
+  display: flex;
+
+  width: max-content;
+  max-width: 100%;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+}
+
+
+.filtro-gooey-svg {
+  position: absolute;
+
+  width: 0;
+  height: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+
+.envoltura-filtro-gooey {
+  position: relative;
+
+  display: flex;
+
+  height: 48px;
+
+  align-items: center;
+  justify-content: flex-start;
+
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   SUPERFICIE PRINCIPAL
+   ========================================================= */
+
+.superficie-busqueda-gooey {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  height: 48px;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  max-width: calc(100vw - 40px);
+
+  padding: 0 17px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+
+  border-radius: 999px;
+
+  color: var(--foreground);
+
+  background: var(--surface);
+
+  box-shadow:
+    0 8px 24px rgba(8, 21, 51, 0.08);
+
+  cursor: text;
+
+  box-sizing: border-box;
+
+  transform-origin: left center;
+}
+
+
+/* =========================================================
+   BURBUJA DEL ICONO
+   ========================================================= */
+
+.burbuja-busqueda-gooey {
+  position: absolute;
+
+  z-index: 3;
+
+  top: 0;
+  left: 0;
+
+  display: flex;
+
+  width: 48px;
+  height: 48px;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--border);
+
+  border-radius: 50%;
+
+  color: var(--foreground);
+
+  background:
+    color-mix(in srgb,
+      var(--cyan) 8%,
+      var(--surface));
+
+  box-shadow:
+    0 8px 22px rgba(8, 21, 51, 0.10);
+
+  transform-origin: center;
+
+  pointer-events: none;
+}
+
+
+.icono-busqueda-gooey,
+.icono-colapsado-busqueda-gooey {
+  width: 18px;
+  height: 18px;
+
+  flex: 0 0 18px;
+}
+
+
+.icono-colapsado-busqueda-gooey {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+.texto-busqueda-gooey {
+  font-size: 13px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.campo-busqueda-gooey {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+
+  padding: 0;
+
+  border: 0;
+  outline: 0;
+
+  color: var(--foreground);
+
+  background: transparent;
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+
+.campo-busqueda-gooey::placeholder {
+  color:
+    color-mix(in srgb,
+      var(--suave) 80%,
+      transparent);
+}
+
+
+.campo-busqueda-gooey::-webkit-search-cancel-button {
+  display: none;
+}
+
+
+/* =========================================================
+   BOTÓN LIMPIAR
+   ========================================================= */
+
+.limpiar-busqueda-gooey {
+  display: flex;
+
+  width: 26px;
+  height: 26px;
+
+  flex: 0 0 26px;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  color: var(--suave);
+
+  background:
+    color-mix(in srgb,
+      var(--foreground) 7%,
+      transparent);
+
+  cursor: pointer;
+
+  font-size: 18px;
+  line-height: 1;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.limpiar-busqueda-gooey:hover {
+  color: var(--cyan);
+
+  background:
+    color-mix(in srgb,
+      var(--cyan) 12%,
+      transparent);
+
+  transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   FOCO
+   ========================================================= */
+
+.entrada-busqueda-gooey:focus-within .superficie-busqueda-gooey {
+  border-color:
+    color-mix(in srgb,
+      var(--foreground) 18%,
+      var(--border));
+  box-shadow:
+    0 10px 30px rgba(8, 21, 51, 0.11);
+
+}
+
+
+/* =========================================================
+   MODO OSCURO
+   ========================================================= */
+
+html[data-tema="oscuro"] .superficie-busqueda-gooey {
+  border:
+    1px solid rgba(255, 255, 255, 0.10);
+
+  background:
+    color-mix(in srgb,
+      var(--surface) 95%,
+      #10152b);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.22);
+}
+
+
+html[data-tema="oscuro"] .burbuja-busqueda-gooey {
+  background:
+    linear-gradient(145deg,
+      color-mix(in srgb,
+        var(--cyan) 16%,
+        var(--surface)),
+      color-mix(in srgb,
+        var(--magenta) 6%,
+        var(--surface)));
+
+  box-shadow:
+    0 10px 26px rgba(0, 0, 0, 0.24);
+}
+
+/* =========================================================
+   MODO CLARO
+   ========================================================= */
+html[data-tema="claro"] .superficie-busqueda-gooey {
+  border:
+    1px solid rgba(21, 32, 68, 0.32);
+
+  background: #ffffff;
+
+  box-shadow:
+    0 8px 24px rgba(9, 24, 54, 0.07);
+}
+
+html[data-tema="claro"] .burbuja-busqueda-gooey {
+  border: 0;
+
+  background:
+    linear-gradient(145deg,
+      rgba(32, 196, 244, 0.10),
+      rgba(255, 255, 255, 1));
+
+  box-shadow:
+    0 7px 18px rgba(9, 24, 54, 0.08);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+  .entrada-busqueda-gooey {
+    --ancho-busqueda-colapsada: 122px;
+    --ancho-busqueda-expandida: 285px;
+    --desplazamiento-busqueda: 54px;
+  }
+
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 480px) {
+  html[data-tema="claro"] .entrada-busqueda-gooey-expandida::before {
+    width: 44px;
+    height: 44px;
+  }
+
+  .entrada-busqueda-gooey {
+    --ancho-busqueda-colapsada: 118px;
+    --ancho-busqueda-expandida:
+      calc(100vw - 102px);
+
+    --desplazamiento-busqueda: 54px;
+
+    max-width: 100%;
+  }
+
+
+  .superficie-busqueda-gooey,
+  .envoltura-filtro-gooey {
+    height: 44px;
+  }
+
+
+  .burbuja-busqueda-gooey {
+    width: 44px;
+    height: 44PX;
+  }
+
+}
+
+
+/* =========================================================
+   MOVIMIENTO REDUCIDO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .limpiar-busqueda-gooey {
+    transition: none;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contenedor-buscador-productos {
+  display: flex;
+
+  width: 100%;
+
+  align-items: center;
+  justify-content: flex-end;
+
+  overflow: visible;
+}
+
+@media (max-width: 760px) {
+  .contenedor-buscador-productos {
+    justify-content: flex-start;
+  }
+}
+
+
+
+
+/* =========================================================
+   BUSCADOR GOOEY · CORRECCIÓN VISUAL FINAL
+   ========================================================= */
+
+/*
+ * El input interno nunca debe dibujar bordes.
+ * Esto elimina las dos líneas cyan laterales.
+ */
+.campo-busqueda-gooey,
+.campo-busqueda-gooey:hover,
+.campo-busqueda-gooey:focus,
+.campo-busqueda-gooey:focus-visible,
+.panel-filtros-productos .campo-busqueda-gooey,
+.panel-filtros-productos .campo-busqueda-gooey:focus {
+  border: 0 !important;
+  outline: 0 !important;
+
+  box-shadow: none !important;
+
+  background: transparent !important;
+
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+
+/*
+ * Evitamos cualquier línea residual producida
+ * por estilos anteriores del buscador.
+ */
+.campo-busqueda-gooey {
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+}
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   BUSCADOR GOOEY · ARO NÍTIDO EN MODO CLARO
+   ========================================================= */
+
+/*
+ * El filtro SVG suaviza el borde de la burbuja.
+ * Este aro se dibuja fuera del filtro y por eso
+ * permanece perfectamente definido.
+ */
+
+html[data-tema="claro"] .entrada-busqueda-gooey-expandida::before {
+  content: "";
+
+  position: absolute;
+
+  z-index: 10;
+
+  top: 0;
+  left: 0;
+
+  width: 48px;
+  height: 48px;
+
+  border:
+    1px solid rgba(21, 32, 68, 0.24);
+
+  border-radius: 50%;
+
+  box-sizing: border-box;
+
+  pointer-events: none;
+
+  box-shadow:
+    0 5px 14px rgba(9, 24, 54, 0.07);
+}
+
+
+
+
+
+
+
+
+/* =========================================================
+   FIN · PÁGINA DE PRODUCTOS · BUSCADOR GOOEY
+   ========================================================= */
+
+/* =========================================================
+   INICIO · PÁGINA DE TESTIMONIOS · RESPONSIVE
+   Breakpoints específicos de testimonios.
+   ========================================================= */
+/* =========================================================
+   TESTIMONIOS · RESPONSIVE
+   ========================================================= */
+
+
+/* Tablet */
+
+@media (max-width: 900px) {
+
+  .rejilla-testimonios {
+    grid-template-columns:
+      repeat(auto-fit,
+        minmax(215px, 260px));
+
+    justify-content: center;
+  }
+
+
+  .tarjeta-testimonio {
+    max-width: 260px;
+  }
+
+}
+
+
+/* Celular */
+
+@media (max-width: 560px) {
+
+  .rejilla-testimonios {
+    grid-template-columns:
+      minmax(0, 285px);
+
+    justify-content: center;
+
+    gap: 20px;
+  }
+
+
+  .tarjeta-testimonio {
+    width: 100%;
+
+    max-width: 285px;
+  }
+
+
+  .contenido-testimonio {
+    padding:
+      16px 16px 18px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   FIN · PÁGINA DE TESTIMONIOS · RESPONSIVE
+   ========================================================= */
+
+/* =========================================================
+   INICIO · ESTRUCTURA GLOBAL · FOOTER RESPONSIVO
+   Versión limpia para tablet y celular.
+   ========================================================= */
+
+/* Logo del footer */
+.footer-logo {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+.footer-logo .logo-tema {
+  height: 52px !important;
+  width: auto !important;
+  max-width: 180px !important;
+  max-height: 56px !important;
+  object-fit: contain !important;
+  object-position: left center !important;
+  position: static !important;
+  transform: none !important;
+}
+
+/* Tablet (hasta 1024px) */
+@media (max-width: 1024px) {
+  .footer-top.footer-redisenado {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 36px 28px !important;
+    align-items: start !important;
+  }
+
+  .footer-identidad {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    width: 100% !important;
+  }
+
+  .footer-identidad-superior {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .footer-eslogan {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    color: var(--suave) !important;
+    max-width: 340px !important;
+    margin: 0 !important;
+  }
+
+  .redes-footer {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    margin-top: 4px !important;
+  }
+}
+
+/* Celular / Pantallas pequeñas (hasta 640px) */
+@media (max-width: 640px) {
+  .pie-pagina-principal {
+    padding-inline: 20px !important;
+    overflow: visible !important;
+  }
+
+  /* Una sola columna vertical para móvil */
+  .footer-top.footer-redisenado {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 28px !important;
+    width: 100% !important;
+    padding: 32px 0 24px !important;
+  }
+
+  .footer-identidad {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    gap: 12px !important;
+    padding-top: 0 !important;
+  }
+
+  .footer-identidad-superior {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .footer-logo {
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: auto !important;
+    height: auto !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+  }
+
+  .footer-logo .logo-tema {
+    height: 48px !important;
+    width: auto !important;
+    max-width: 160px !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    margin: 0 auto !important;
+    transform: none !important;
+  }
+
+  .footer-eslogan {
+    max-width: 320px !important;
+    font-size: 13.5px !important;
+    line-height: 1.5 !important;
+    color: var(--suave) !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    display: block !important;
+  }
+
+  .redes-footer {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+    margin-top: 4px !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .footer-top.footer-redisenado .redes-footer a {
+    display: grid !important;
+    width: 40px !important;
+    height: 40px !important;
+    margin: 0 !important;
+    place-items: center !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 50% !important;
+    color: var(--foreground) !important;
+    background: color-mix(in srgb, var(--surface) 92%, transparent) !important;
+    transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease !important;
+  }
+
+  .footer-top.footer-redisenado .redes-footer a:hover {
+    color: var(--cyan) !important;
+    border-color: color-mix(in srgb, var(--cyan) 55%, var(--border)) !important;
+    transform: translateY(-2px) !important;
+  }
+
+  /* Ocultar Explora en móvil para mantener limpio el footer */
+  .footer-explora {
+    display: none !important;
+  }
+
+  /* Contactos por área */
+  .footer-contactos {
+    width: 100% !important;
+    gap: 0 !important;
+  }
+
+  .footer-columna > span {
+    display: block !important;
+    margin-bottom: 8px !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.09em !important;
+    text-transform: uppercase !important;
+    color: var(--foreground) !important;
+  }
+
+  .footer-contactos button {
+    min-height: 56px !important;
+    padding: 10px 0 !important;
+    display: grid !important;
+    grid-template-columns: 26px minmax(0, 1fr) !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  .footer-contactos button > svg {
+    width: 19px !important;
+    height: 19px !important;
+    color: var(--cyan) !important;
+  }
+
+  .footer-contactos button strong {
+    font-size: 13px !important;
+    color: var(--foreground) !important;
+  }
+
+  .footer-contactos button small {
+    margin-top: 2px !important;
+    font-size: 11px !important;
+    color: var(--suave) !important;
+  }
+
+  /* Visítanos */
+  .footer-ubicacion {
+    width: 100% !important;
+    gap: 12px !important;
+  }
+
+  .dato-footer {
+    display: grid !important;
+    grid-template-columns: 22px minmax(0, 1fr) !important;
+    gap: 10px !important;
+    align-items: start !important;
+  }
+
+  .dato-footer > svg {
+    color: var(--cyan) !important;
+    margin-top: 2px !important;
+  }
+
+  .dato-footer p {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+  }
+
+  .enlace-ubicacion-footer {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    margin-left: 32px !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    color: var(--cyan) !important;
+  }
+
+  .dato-footer-secundario {
+    display: none !important;
+  }
+
+  /* Pie inferior */
+  .pie-pagina-principal .footer-bottom {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 8px !important;
+    padding: 16px 0 !important;
+    font-size: 11.5px !important;
+    border-top: 1px solid var(--border) !important;
+    margin-top: 8px !important;
+  }
+}
+
+
+
+
+
+@media (max-width: 760px) {
+
+  .hero .texto-morfosis {
+    /*
+     * En celular los títulos pueden ocupar hasta
+     * tres líneas. Reservamos siempre esas tres.
+     */
+
+    margin:
+      20px 0 16px;
+  }
+
+}
+
+
+
+@media (max-width: 480px) {
+
+  .hero h1 {
+    font-size:
+      clamp(2.1rem,
+        9.5vw,
+        2.9rem);
+
+    line-height: 0.95;
+  }
+
+
+
+
+  .hero-contenido {
+    padding:
+      40px 22px 110px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   FIN · ESTRUCTURA GLOBAL · FOOTER MÓVIL
+   ========================================================= */
+
+/* =========================================================
+   INICIO · PÁGINA DE INICIO · CONVENIOS ANIMADOS · AJUSTES DE ALTURA
+   Altura estable, texto, controles y correcciones responsive posteriores.
+   ========================================================= */
+/* =========================================================
+   CONVENIOS ANIMADOS · ALTURA ESTABLE
+   ========================================================= */
+
+.convenios-animados {
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   ZONA VISUAL
+   ========================================================= */
+
+.convenios-animados-visual {
+  display: flex;
+
+  min-width: 0;
+
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   CONVENIOS · COLUMNA DE INFORMACIÓN
+   ========================================================= */
+
+.convenios-animados-columna-info {
+  display: flex;
+
+  min-width: 0;
+  height: 100%;
+
+  flex-direction: column;
+
+  align-self: stretch;
+}
+
+
+.convenios-animados-contenido {
+  display: block;
+
+  width: 100%;
+  min-width: 0;
+
+  /*
+   * Conservamos una altura mínima para evitar
+   * saltos bruscos entre convenios cortos.
+   *
+   * Pero NO usamos height/max-height:
+   * los textos largos pueden mostrarse completos.
+   */
+  min-height: 390px;
+
+  overflow: visible;
+}
+
+
+.convenio-animado-informacion {
+  display: flex;
+
+  width: 100%;
+  min-width: 0;
+
+  flex-direction: column;
+
+  overflow: visible;
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+/*
+ * Todos los títulos reservan espacio para dos líneas.
+ * "fundaciones" y "instituciones educativas"
+ * ocuparán siempre el mismo bloque.
+ */
+.convenio-animado-informacion h3 {
+  display: -webkit-box;
+
+  width: 100%;
+
+  height: 2.05em;
+  min-height: 2.05em;
+  max-height: 2.05em;
+
+  margin: 0;
+
+  overflow: hidden;
+
+  line-height: 1.02;
+
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+
+  line-clamp: 2;
+
+  text-wrap: balance;
+}
+
+
+/* =========================================================
+   DESCRIPCIÓN
+   ========================================================= */
+
+/*
+ * La descripción puede ocupar hasta seis líneas.
+ * Si es más larga, se corta visualmente sin agrandar
+ * toda la sección.
+ */
+.descripcion-convenio-animado {
+  display: block;
+
+  width: 100%;
+
+  margin:
+    28px 0 0;
+
+  color: var(--suave);
+
+  font-size:
+    clamp(1rem,
+      1.8vw,
+      1.2rem);
+
+  line-height: 1.7;
+
+  white-space: normal;
+
+  overflow: visible;
+
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+
+.descripcion-convenio-animado .palabra-convenio-animado {
+  display: inline !important;
+
+  white-space: normal !important;
+}
+
+
+/* El enlace queda siempre en la misma posición */
+
+.enlace-convenio-animado {
+  margin-top: auto;
+
+  padding-top: 18px;
+}
+
+
+/* =========================================================
+   CONTROLES
+   ========================================================= */
+
+.controles-convenios-movil {
+  display: none;
+}
+
+
+.controles-convenios-escritorio {
+  display: flex;
+
+  margin-top: auto;
+
+  padding-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   CONVENIOS · TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .convenios-animados {
+    gap: 34px;
+  }
+
+
+  .convenios-animados-contenido {
+    min-height: 340px;
+
+    height: auto;
+    max-height: none;
+
+    overflow: visible;
+  }
+
+
+  .convenio-animado-informacion h3 {
+    height: 2.1em;
+    min-height: 2.1em;
+    max-height: 2.1em;
+
+    font-size:
+      clamp(1.75rem,
+        4vw,
+        2.7rem);
+  }
+
+
+  .descripcion-convenio-animado {
+    height: 9.6em;
+    min-height: 9.6em;
+    max-height: 9.6em;
+
+    font-size: 1rem;
+
+    line-height: 1.6;
+
+    -webkit-line-clamp: 6;
+    line-clamp: 6;
+  }
+
+
+  /*
+   * En tablet también resulta más cómodo
+   * navegar debajo de la imagen.
+   */
+  .controles-convenios-escritorio {
+    display: none;
+  }
+
+
+  .controles-convenios-movil {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 12px;
+
+    width: min(100%, 420px);
+
+    margin:
+      10px auto 0;
+
+    padding-top: 0;
+  }
+
+}
+
+
+
+
+
+
+
+/* =========================================================
+   CONVENIOS · CELULAR
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .convenios-animados {
+    grid-template-columns: 1fr;
+
+    gap: 24px;
+
+    padding:
+      18px 0 8px;
+  }
+
+
+  /*
+   * Imagen siempre del mismo tamaño.
+   */
+  .convenios-animados-imagenes {
+    width:
+      min(calc(100% - 28px),
+        370px);
+
+    height: 390px;
+
+    min-height: 390px;
+    max-height: 390px;
+  }
+
+
+  .contador-convenio-animado {
+    width:
+      min(calc(100% - 28px),
+        370px);
+
+    margin-top: 14px;
+  }
+
+
+  /*
+   * Flechas inmediatamente debajo de imagen + contador.
+   */
+  .controles-convenios-movil {
+    display: flex;
+
+    width:
+      min(calc(100% - 28px),
+        370px);
+
+    margin:
+      12px auto 0;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 12px;
+  }
+
+
+  .controles-convenios-movil button {
+    width: 44px;
+    height: 44px;
+  }
+
+
+  .controles-convenios-escritorio {
+    display: none;
+  }
+
+
+  /*
+   * Información con altura estable.
+   */
+  .convenios-animados-contenido {
+    width: 100%;
+
+    min-height: 0;
+
+    height: auto;
+    max-height: none;
+
+    padding:
+      4px 4px 0;
+
+    overflow: visible;
+  }
+
+
+  .etiqueta-convenio-animado {
+    margin-bottom: 12px;
+
+    font-size: 10px;
+  }
+
+
+  .convenio-animado-informacion h3 {
+    height: 2.05em;
+    min-height: 2.05em;
+    max-height: 2.05em;
+
+    font-size:
+      clamp(1.8rem,
+        8vw,
+        2.4rem);
+
+    line-height: 1.02;
+
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+
+
+  .descripcion-convenio-animado {
+    height: 8.25em;
+    min-height: 8.25em;
+    max-height: 8.25em;
+
+    margin-top: 18px;
+
+    font-size: 0.95rem;
+
+    line-height: 1.65;
+
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+  }
+
+
+  .enlace-convenio-animado {
+    padding-top: 12px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 430px) {
+
+  .convenios-animados-imagenes {
+    width:
+      min(calc(100% - 20px),
+        340px);
+
+    height: 360px;
+
+    min-height: 360px;
+    max-height: 360px;
+  }
+
+
+  .contador-convenio-animado,
+  .controles-convenios-movil {
+    width:
+      min(calc(100% - 20px),
+        340px);
+  }
+
+
+  .convenios-animados-contenido {
+    height: 340px;
+    min-height: 340px;
+    max-height: 340px;
+  }
+
+
+  .convenio-animado-informacion h3 {
+    font-size:
+      clamp(1.65rem,
+        8vw,
+        2.15rem);
+  }
+
+
+  .descripcion-convenio-animado {
+    font-size: 0.92rem;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   CONVENIOS · CORRECCIÓN DE DESCRIPCIÓN
+   ========================================================= */
+
+.descripcion-convenio-animado {
+  white-space: normal !important;
+
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: normal;
+}
+
+
+
+
+
+
+
+
+/* =========================================================
+   CONVENIOS · CONTROLES CENTRADOS EN ESCRITORIO
+   ========================================================= */
+
+@media (min-width: 901px) {
+
+  .convenios-animados-contenido {
+    display: flex;
+    flex-direction: column;
+
+    height: 420px;
+    min-height: 420px;
+    max-height: 420px;
+
+    overflow: hidden;
+  }
+
+
+  .convenio-animado-informacion {
+    flex: 1;
+
+    min-height: 0;
+
+    overflow: hidden;
+  }
+
+
+  .descripcion-convenio-animado {
+    margin-bottom: 0;
+  }
+
+
+  .controles-convenios-escritorio {
+    position: static !important;
+
+    display: flex;
+
+    flex: 0 0 auto;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    width: 100%;
+
+    margin: 28px 0 0;
+    padding: 0;
+
+    transform: none !important;
+  }
+
+
+  .controles-convenios-escritorio button {
+    flex: 0 0 auto;
+  }
+
+}
+/* =========================================================
+   FIN · PÁGINA DE INICIO · CONVENIOS ANIMADOS · AJUSTES DE ALTURA
+   ========================================================= */

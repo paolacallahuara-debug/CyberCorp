@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es" data-tema="oscuro">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="CyberCorp: productos, cursos técnicos e instalación profesional en Tarija, Bolivia." />
+  <link rel="icon" type="image/png" id="favicon-tag" href="/marca/logo-claro.png" />
+  <link rel="icon" type="image/png" href="/marca/logo-claro.png" media="(prefers-color-scheme: light)" />
+  <link rel="icon" type="image/png" href="/marca/logo-sinfondo.png" media="(prefers-color-scheme: dark)" />
+  <link rel="preload" as="image" href="/marca/logo-sinfondo.png" />
+  <link rel="preload" as="image" href="/marca/logo-claro.png" />
+  <link rel="preload" as="image" href="/seguridad-hero.png" fetchpriority="high" />
+  <link rel="preload" as="image" href="/cerco.png" fetchpriority="high" />
+  <link rel="preload" as="image" href="/alarmas.png" fetchpriority="high" />
+  <title>CyberCorp | Seguridad y Tecnología</title>
+  <script>
+    try {
+      document.documentElement.dataset.tema =
+        localStorage.getItem("cybercorp-tema") || "oscuro";
+    } catch { }
+
+    (function () {
+      function sincronizarFavicon() {
+        try {
+          var esOscuro = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+          var fav = document.getElementById("favicon-tag");
+          if (fav) {
+            fav.href = esOscuro ? "/marca/logo-sinfondo.png" : "/marca/logo-claro.png";
+          }
+        } catch (_) { }
+      }
+      sincronizarFavicon();
+      if (window.matchMedia) {
+        var mq = window.matchMedia("(prefers-color-scheme: dark)");
+        if (mq.addEventListener) {
+          mq.addEventListener("change", sincronizarFavicon);
+        } else if (mq.addListener) {
+          mq.addListener(sincronizarFavicon);
+        }
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>

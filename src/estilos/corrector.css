@@ -1,0 +1,184 @@
+/**
+ * Estilos del corrector ortográfico y su menú contextual.
+ * Usa solo variables CSS del tema (claro/oscuro automático).
+ * Sin colores fijos en línea.
+ */
+
+/* ── Contenedor del campo con corrector ───────────────────────────────────── */
+.campo-corregido-wrapper {
+  position: relative;
+  display: contents; /* No añade caja extra; el input/textarea sigue siendo el hijo directo */
+}
+
+/* ── Botón "Revisar texto" (solo en textarea) ────────────────────────────── */
+.btn-revisar-texto {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted-foreground);
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  letter-spacing: 0.01em;
+}
+
+.btn-revisar-texto:hover:not(:disabled) {
+  color: var(--cyan);
+  border-color: var(--cyan);
+  background: color-mix(in srgb, var(--cyan) 8%, transparent);
+}
+
+.btn-revisar-texto:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-revisar-texto-aviso {
+  font-size: 10px;
+  color: var(--muted-foreground);
+  opacity: 0.7;
+  margin-top: 2px;
+}
+
+/* ── Resultados de LanguageTool ──────────────────────────────────────────── */
+.lt-resultados {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lt-resultado-item {
+  background: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+.lt-resultado-mensaje {
+  color: var(--foreground);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.lt-resultado-sugerencias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.lt-sugerencia-btn {
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--cyan);
+  background: transparent;
+  color: var(--cyan);
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.lt-sugerencia-btn:hover {
+  background: var(--cyan);
+  color: var(--primary-foreground);
+}
+
+/* ── Menú contextual del corrector ──────────────────────────────────────── */
+.corrector-menu {
+  position: fixed;
+  z-index: 9999;
+  min-width: 180px;
+  max-width: 260px;
+  background: var(--popover);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.25),
+    0 2px 4px -2px rgba(0, 0, 0, 0.18);
+  padding: 4px 0;
+  outline: none;
+  animation: corrector-menu-aparecer 0.12s ease;
+}
+
+@keyframes corrector-menu-aparecer {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.corrector-menu-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 7px 14px;
+  font-size: 13px;
+  text-align: left;
+  border: none;
+  background: transparent;
+  color: var(--popover-foreground);
+  cursor: pointer;
+  transition: background 0.1s;
+  border-radius: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.corrector-menu-item:hover,
+.corrector-menu-item[data-foco="true"] {
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+
+.corrector-menu-item.sugerencia {
+  font-weight: 500;
+  color: var(--cyan);
+}
+
+.corrector-menu-item.accion {
+  font-size: 12px;
+  color: var(--muted-foreground);
+}
+
+.corrector-menu-item.accion:hover,
+.corrector-menu-item.accion[data-foco="true"] {
+  color: var(--foreground);
+  background: var(--accent);
+}
+
+.corrector-menu-separador {
+  height: 1px;
+  background: var(--border);
+  margin: 4px 0;
+}
+
+.corrector-menu-encabezado {
+  padding: 4px 14px 2px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--muted-foreground);
+  text-transform: uppercase;
+}
+
+.corrector-menu-nota-homofonos {
+  padding: 6px 14px;
+  font-size: 12px;
+  color: var(--muted-foreground);
+  font-style: italic;
+  border-top: 1px solid var(--border);
+  margin-top: 2px;
+}

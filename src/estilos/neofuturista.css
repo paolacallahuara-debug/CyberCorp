@@ -1,0 +1,1780 @@
+/* =========================================================
+   MAPA ESTRUCTURAL AÑADIDO · NEOFUTURISTA
+   IMPORTANTE: no se eliminó ni reordenó ninguna regla CSS.
+   Solo se añadieron separadores para identificar cada bloque.
+   ========================================================= */
+
+
+/* =========================================================
+   INICIO · BASE GLOBAL · IDENTIDAD NEO-FUTURISTA
+   Tipografía, títulos, botones, enlaces y foco.
+   ========================================================= */
+/* Identidad neo-futurista: curvas,
+paneles translúcidos,
+trazos y luz controlada. \*/ 
+html {
+  --magenta: #ed145b;
+}
+
+
+
+body {
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 16px;
+
+  letter-spacing: 0;
+
+}
+
+
+
+button,
+
+input,
+
+textarea,
+
+select {
+
+  font-family: inherit;
+
+}
+
+
+
+h1,
+
+h2,
+
+h3,
+
+strong,
+
+b,
+
+.boton,
+
+.enlace,
+
+.eyebrow {
+
+  font-family: inherit;
+
+  font-weight: 700;
+
+}
+
+
+
+h1,
+
+h2,
+
+h3 {
+
+  letter-spacing: -.055em;
+
+  text-transform: none;
+
+  line-height: 1.08;
+
+}
+
+
+
+h1 {
+
+  font-size: clamp(2.7rem, 5.2vw, 5.5rem);
+
+}
+
+
+
+h2 {
+
+  font-size: clamp(2rem, 3.7vw, 3.5rem);
+
+}
+
+
+
+h3 {
+
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+
+}
+
+
+
+.etiqueta,
+.eyebrow,
+.topbar,
+.portada-rotulo,
+.hero-coordenadas {
+  font-family: ui-monospace, 'Cascadia Code', 'Segoe UI Mono', monospace;
+  font-weight: 600;
+  letter-spacing: .14em;
+}
+
+
+
+.boton,
+
+.enlace,
+
+.nav,
+
+.carritobtn {
+
+  font-size: 14px;
+
+}
+
+
+
+.boton {
+
+  border-radius: 100px;
+
+  padding: 13px 22px;
+
+  font-weight: 700;
+
+}
+
+
+
+.boton:focus-visible,
+
+.iconobtn:focus-visible,
+
+a:focus-visible,
+
+button:focus-visible {
+
+  outline: 2px solid #20c4f4;
+
+  outline-offset: 3px;
+
+}
+
+
+
+
+/* =========================================================
+   FIN · BASE GLOBAL · IDENTIDAD NEO-FUTURISTA
+   ========================================================= */
+
+/* =========================================================
+   INICIO · ESTRUCTURA GLOBAL · ENCABEZADO, NAVEGACIÓN Y LOGO
+   Header pegajoso, topbar, navegación, acceso y logo.
+   ========================================================= */
+.encabezado-pegajoso {
+
+  background: color-mix(in srgb, var(--background) 83%, transparent);
+
+  backdrop-filter: blur(22px);
+
+  -webkit-backdrop-filter: blur(22px);
+
+}
+
+
+
+.topbar {
+
+  font-size: 10px;
+
+  letter-spacing: .1em;
+
+}
+
+
+
+.cabecera {
+
+  height: 84px;
+
+  max-width: 1560px;
+
+  gap: 18px;
+
+}
+
+
+
+.nav {
+
+  gap: clamp(10px, 2vw, 26px);
+
+  font-size: 14px;
+
+}
+
+
+
+.nav a {
+
+  font-weight: 600;
+
+}
+
+
+
+.nav a.activo {
+
+  border-color: var(--magenta);
+
+}
+
+
+
+.acciones {
+
+  gap: 10px;
+
+}
+
+
+
+.acceso-cabecera {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 100px;
+
+  padding: 9px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+}
+
+
+
+.acceso-cabecera:hover {
+
+  color: var(--cyan);
+
+  border-color: var(--cyan);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   FIN · ESTRUCTURA GLOBAL · ENCABEZADO, NAVEGACIÓN Y LOGO
+   ========================================================= */
+
+/* =========================================================
+   INICIO · ESTRUCTURA GLOBAL · MAIN Y RÓTULO DE PORTADA
+   Ancho del contenido y encabezado visual de páginas.
+   ========================================================= */
+main {
+
+  max-width: 1560px;
+
+}
+
+
+
+.portada-rotulo {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: end;
+
+  gap: 18px;
+
+  padding: 24px 5px 15px;
+
+  font-size: 10px;
+
+  color: var(--suave);
+
+}
+
+
+
+.portada-rotulo span:first-child {
+
+  color: var(--foreground);
+
+  font: 900 clamp(26px, 4.3vw, 58px)/.9 "Montserrat", sans-serif;
+
+  letter-spacing: -.075em;
+
+}
+
+
+
+
+/* =========================================================
+   FIN · ESTRUCTURA GLOBAL · MAIN Y RÓTULO DE PORTADA
+   ========================================================= */
+
+/* =========================================================
+   INICIO · PÁGINA DE INICIO · HERO Y TARJETAS
+   Hero, carrusel, ficha, confianza y comportamiento visual compartido.
+   ========================================================= */
+.hero {
+  position: relative;
+  height: clamp(500px, 57vh, 550px);
+  min-height: 500px;
+  max-height: 550px;
+  border-radius: 28px;
+  border-color: #20c4f44d;
+  isolation: isolate;
+  overflow: hidden;
+  box-shadow: 0 24px 80px #10112833, inset 0 0 0 1px #fff1;
+  margin-top: 20px;
+}
+
+.hero-galeria {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-imagen {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% 42%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.65s ease-in-out;
+  will-change: opacity;
+}
+
+.hero-imagen.anterior {
+  opacity: 1;
+  z-index: 1;
+  transition: none;
+}
+
+.hero-imagen.activo {
+  opacity: 1;
+  z-index: 2;
+  transition: opacity 0.65s ease-in-out;
+}
+
+.hero-sombra {
+  z-index: 3;
+  background: linear-gradient(
+    90deg,
+    #12152ff7 0%,
+    #12152ff0 28%,
+    #12152f99 50%,
+    #12152f05 78%
+  ), linear-gradient(0deg, #12152f8c, transparent 35%);
+}
+
+.hero-contenido {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  max-width: 610px;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 40px 5% 44px;
+}
+
+.hero .etiqueta {
+  font-size: 11px;
+  border-radius: 100px;
+  padding: 6px 14px;
+}
+
+.hero h1 {
+  font: 800 clamp(2.4rem, 3.2vw, 3.6rem)/0.96 "Montserrat", sans-serif;
+  letter-spacing: -0.05em;
+  margin: 12px 0 14px;
+  text-transform: none;
+}
+
+.hero h1 em {
+  color: #20c4f4;
+}
+
+.hero-cuerpo-contenedor {
+  display: grid;
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.hero-slide-cuerpo {
+  grid-area: 1 / 1;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+  pointer-events: none;
+}
+
+.hero-slide-cuerpo.activo {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.hero-slide-cuerpo p {
+  font: 400 15px/1.45 "Montserrat", sans-serif;
+  max-width: 440px;
+  color: #bfc1d4;
+  margin-bottom: 16px;
+}
+
+
+
+.hero .primario {
+
+  background: #20c4f4;
+
+  color: #111225;
+
+}
+
+
+
+.hero .secundario {
+
+  border-color: #ffffff71;
+
+  background: #ffffff14;
+
+  backdrop-filter: blur(12px);
+
+}
+
+
+
+.hero-nota {
+
+  font: 500 12px "Montserrat", sans-serif;
+
+  color: #d0d3e4;
+
+}
+
+
+
+.hero-pie {
+  left: 5%;
+  right: auto;
+  bottom: 16px;
+  z-index: 4;
+  font: 600 13px "Montserrat", sans-serif;
+}
+
+.puntos button {
+  height: 8px;
+  width: 8px;
+}
+
+.puntos button.seleccionado {
+  width: 31px;
+}
+
+.hero-ficha {
+  z-index: 4;
+  right: 32px;
+  bottom: 72px;
+  border-radius: 14px;
+  padding: 10px 18px;
+  background: #171c3dbf;
+  border-color: #b7f2ff57;
+  box-shadow: 0 15px 35px #0005;
+}
+
+
+
+.hero-ficha strong,
+
+.hero-ficha span {
+
+  font: 600 13px "Montserrat", sans-serif;
+
+}
+
+
+
+.hero-ficha span {
+
+  font-weight: 400;
+
+}
+
+
+
+.confianza,
+.categorias-grid a,
+.oferta {
+  border-radius: 24px;
+}
+
+
+
+.oferta,
+
+.curso-banner {
+
+  overflow: hidden;
+
+}
+
+
+
+.categorias-grid a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px #08153324;
+}
+
+
+
+
+/* =========================================================
+   FIN · PÁGINA DE INICIO · HERO Y TARJETAS
+   ========================================================= */
+
+/* =========================================================
+   INICIO · ESTRUCTURA GLOBAL · FOOTER
+   Tipografía del footer.
+   ========================================================= */
+.curso-banner {
+
+  border-radius: 36px;
+
+}
+
+
+
+.footer-top p,
+
+.footer-top a:not(.marca):not(.logo-empresa),
+
+.footer-top button,
+
+.footer-top>div>span {
+
+  font-size: 14px;
+
+  line-height: 1.5;
+
+}
+
+
+
+.footer-bottom {
+
+  font-size: 12px;
+
+}
+
+
+
+
+/* =========================================================
+   FIN · ESTRUCTURA GLOBAL · FOOTER
+   ========================================================= */
+
+/* =========================================================
+   INICIO · PÁGINA DE CURSOS · TARJETAS Y AYUDA
+   Rejilla, tarjetas, imagen, temario, detalles y panel de orientación.
+   ========================================================= */
+/* Cursos: dos tarjetas compactas y una columna de orientación. \*/ 
+.catalogo>h1 {
+  font-size: clamp(2.8rem, 5vw, 5.8rem);
+}
+
+
+
+.catalogo>p {
+
+  max-width: 700px;
+
+  line-height: 1.55;
+
+}
+
+
+
+/* =========================================================
+   FIN · PÁGINA DE CURSOS · TARJETAS Y AYUDA
+   ========================================================= */
+
+/* =========================================================
+   INICIO · CARRITO · PANEL LATERAL
+   Capas, miniaturas, artículos y resumen.
+   ========================================================= */
+/*=========================================================CARRITO · CAPA SOBRE EL ENCABEZADO=========================================================\*/ 
+[data-slot="sheet-overlay"] {
+
+  z-index: 300 !important;
+
+}
+
+
+
+/* Carrito: cajón de anchura contenida incluso en pantallas grandes. */ 
+.panel-carrito[data-slot="sheet-content"] {
+
+  z-index: 310 !important;
+
+  width: min(430px, 100vw) !important;
+
+  min-width: 0 !important;
+
+  max-width: 430px !important;
+
+  padding: 28px 24px;
+
+  gap: 8px;
+
+  background: var(--surface);
+
+}
+
+
+
+.panel-carrito [data-slot="sheet-title"] {
+
+  font: 800 25px "Montserrat", sans-serif;
+
+  letter-spacing: -.05em;
+
+}
+
+
+
+.panel-carrito [data-slot="sheet-description"] {
+
+  font: 400 13px "Montserrat", sans-serif;
+
+}
+
+
+
+.carrito-items {
+
+  margin-top: 18px;
+
+  min-height: 0;
+
+}
+
+
+
+.carrito-item {
+
+  gap: 12px;
+
+  padding: 16px 0;
+
+  align-items: start;
+
+}
+
+
+
+.carrito-miniatura {
+
+  flex: none !important;
+
+  width: 58px;
+
+  height: 58px;
+
+  background: #f3f5f9;
+
+  border: 1px solid var(--border);
+
+  border-radius: 14px;
+
+  display: grid;
+
+  place-items: center;
+
+  color: #007ca3;
+
+  overflow: hidden;
+
+}
+
+
+
+.carrito-miniatura img {
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: contain;
+
+  padding: 4px;
+
+}
+
+
+
+.carrito-item>div:nth-child(2) {
+
+  min-width: 0;
+
+  flex: 1;
+
+}
+
+
+
+.carrito-item strong {
+
+  display: block;
+
+  font: 700 14px/1.3 "Montserrat", sans-serif;
+
+}
+
+
+
+.carrito-item p {
+
+  font: 500 13px "Montserrat", sans-serif;
+
+  margin: 6px 0;
+
+}
+
+
+
+.cantidad {
+
+  font: 600 13px "Montserrat", sans-serif;
+
+}
+
+
+
+.resumen {
+
+  padding-top: 17px;
+
+}
+
+
+
+.resumen>div {
+
+  gap: 14px;
+
+  font-size: 14px;
+
+}
+
+
+
+.resumen p {
+
+  font: 400 12px/1.5 "Montserrat", sans-serif;
+
+}
+
+
+
+.resumen .boton {
+
+  font-size: 13px;
+
+}
+
+
+
+
+/* =========================================================
+   FIN · CARRITO · PANEL LATERAL
+   ========================================================= */
+
+
+
+
+
+
+/* =========================================================
+   INICIO · ACCESO / LOGIN · PÁGINA DE AUTENTICACIÓN
+   Presentación, formulario y navegación de acceso.
+   ========================================================= */
+/* Acceso y registro de demostración. */ 
+.acceso-pagina {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  max-width: 1120px;
+  margin: 48px auto 90px;
+  border-radius: 34px;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 25px 75px #0e123628;
+}
+
+
+
+.acceso-presentacion {
+
+  min-height: 610px;
+
+  padding: 55px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background: radial-gradient(circle at 80% 68%, #20c4f473, transparent 32%), radial-gradient(circle at 20% 25%, #ed145b4d, transparent 38%), #1c1d41;
+
+  color: white;
+
+}
+
+
+
+.acceso-presentacion:after {
+
+  content: '';
+
+  position: absolute;
+
+  width: 290px;
+
+  height: 290px;
+
+  border: 1px solid #20c4f473;
+
+  border-radius: 50%;
+
+  right: -70px;
+
+  bottom: -105px;
+
+  box-shadow: 0 0 0 35px #20c4f414, 0 0 0 70px #20c4f40d;
+
+}
+
+
+
+.acceso-presentacion .etiqueta {
+
+  align-self: start;
+
+}
+
+
+
+.acceso-presentacion h1 {
+
+  font-size: clamp(3.2rem, 5vw, 5.6rem);
+
+  margin: 72px 0 15px;
+
+}
+
+
+
+.acceso-presentacion h1 em {
+
+  color: #20c4f4;
+
+}
+
+
+
+.acceso-presentacion p {
+
+  font: 400 17px/1.6 "Montserrat", sans-serif;
+
+  max-width: 340px;
+
+  color: #d5d9e6;
+
+}
+
+
+
+.acceso-presentacion small {
+
+  margin-top: auto;
+
+  font-size: 12px;
+
+  color: #b8c2d8;
+
+}
+
+
+
+.acceso-icono {
+
+  display: grid;
+
+  place-items: center;
+
+  position: absolute;
+
+  right: 50px;
+
+  bottom: 65px;
+
+  width: 180px;
+
+  height: 180px;
+
+  border: 1px solid #ffffff4d;
+
+  border-radius: 35px;
+
+  transform: rotate(-12deg);
+
+  background: #ffffff12;
+
+  backdrop-filter: blur(16px);
+
+  color: #20c4f4;
+
+}
+
+
+
+.acceso-formulario {
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: clamp(28px, 5vw, 75px);
+
+}
+
+
+
+.acceso-pestanas {
+
+  display: flex;
+
+  gap: 26px;
+
+  margin-bottom: 55px;
+
+  border-bottom: 1px solid var(--border);
+
+}
+
+
+
+.acceso-pestanas a {
+
+  padding: 0 0 16px;
+
+  color: var(--suave);
+
+  font-weight: 700;
+
+  font-size: 14px;
+
+}
+
+
+
+.acceso-pestanas a[aria-current="page"] {
+
+  color: var(--cyan);
+
+  border-bottom: 2px solid var(--cyan);
+
+}
+
+
+
+.acceso-formulario h2 {
+
+  font-size: clamp(2.2rem, 3vw, 3.5rem);
+
+}
+
+
+
+.acceso-formulario p {
+
+  color: var(--suave);
+
+  line-height: 1.55;
+
+  font-size: 14px;
+
+}
+
+
+
+.acceso-formulario form {
+
+  margin-top: 26px;
+
+}
+
+
+
+.acceso-formulario label {
+
+  font: 700 13px "Montserrat", sans-serif;
+
+}
+
+
+
+.acceso-formulario input {
+
+  margin-top: 9px;
+
+  border-radius: 12px;
+
+  font-size: 15px;
+
+  padding: 14px;
+
+}
+
+
+
+.acceso-formulario .boton {
+
+  margin-top: 10px;
+
+  width: 100%;
+
+}
+
+
+
+.acceso-volver {
+
+  margin-top: 28px;
+
+  color: var(--suave);
+
+  font-size: 13px;
+
+}
+
+
+
+
+/* =========================================================
+   FIN · ACCESO / LOGIN · PÁGINA DE AUTENTICACIÓN
+   ========================================================= */
+
+/* =========================================================
+   INICIO · RESPONSIVIDAD · CABECERA, INICIO, CURSOS, ACCESO Y CARRITO
+   Media queries de tablet/móvil y movimiento reducido.
+   ========================================================= */
+/* Siempre mostrar solo el ícono en acceso, sin texto */
+.acceso-cabecera span {
+  display: none;
+}
+
+
+
+
+@media (max-width: 760px) {
+  .cabecera {
+    height: 74px;
+    padding-inline: 16px;
+  }
+
+
+  .nav.abierto {
+    top: 100%;
+  }
+
+  .acciones {
+    gap: 5px;
+  }
+
+  .acceso-cabecera {
+    padding: 7px;
+  }
+
+  .acceso-cabecera svg {
+    width: 18px;
+  }
+
+  main {
+    padding-inline: 12px;
+  }
+
+  .portada-rotulo {
+    padding: 18px 4px 12px;
+  }
+
+  .portada-rotulo span:last-child {
+    max-width: 135px;
+    text-align: right;
+    line-height: 1.4;
+    font-size: 8px;
+  }
+
+  .hero {
+    /* svh funciona mejor en celulares porque tiene \* en cuenta las barras del navegador móvil. */ 
+    height: clamp(650px, 82svh, 700px);
+    min-height: 0;
+    max-height: 700px;
+    border-radius: 55px 22px 55px 22px;
+    overflow: hidden;
+
+  }
+
+  .hero:before {
+    inset: 9px;
+    border-radius: 16px 16px 49px 16px;
+  }
+
+  .hero-imagen {
+    object-position: 62% 75%;
+  }
+
+  .hero-sombra {
+    background: linear-gradient(180deg, #12152ff2 0%, #12152fe6 40%, #12152f38 85%);
+  }
+
+  .hero-contenido {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding:
+      64px 26px 125px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.5rem, 12vw, 5.5rem);
+    max-width: 600px;
+  }
+
+  .hero p {
+    font-size: 15px;
+    max-width: 370px;
+  }
+
+  .hero-nota,
+  .hero-ficha,
+  .hero-orbita {
+    display: none;
+  }
+
+  .hero-pie {
+    bottom: 28px;
+    left: 26px;
+    right: 26px;
+  }
+
+  .acceso-pagina {
+    grid-template-columns: 1fr;
+    margin: 20px 0 55px;
+    border-radius: 24px;
+  }
+
+  .acceso-presentacion {
+    min-height: 260px;
+    padding: 30px;
+  }
+
+  .acceso-presentacion h1 {
+    font-size: 3rem;
+    margin: 35px 0 10px;
+  }
+
+  .acceso-presentacion p {
+    font-size: 14px;
+  }
+
+  .acceso-presentacion small,
+  .acceso-icono {
+    display: none;
+  }
+
+  .acceso-formulario {
+    padding: 30px;
+  }
+
+  .acceso-pestanas {
+    margin-bottom: 28px;
+  }
+
+  .panel-carrito[data-slot="sheet-content"] {
+    width: min(430px, 100vw) !important;
+    padding: 25px 18px;
+  }
+}
+
+
+
+
+/* =========================================================
+   FIN · RESPONSIVIDAD · CABECERA, INICIO, CURSOS, ACCESO Y CARRITO
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  .categorias-grid a {
+    transition: none;
+  }
+}
+
+
+
+
+/* =========================================================
+   INICIO · PANEL ADMINISTRADOR · ESTRUCTURA Y FORMULARIOS
+   Cabecera, main, tablas, formularios, kits, catálogos y estados.
+   ========================================================= */
+/* Panel de administración y pie adaptable. */ 
+.estructura-administrador {
+
+  min-height: 100vh;
+
+  background: var(--background);
+
+}
+
+
+
+.cabecera-administrador {
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 45;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 22px;
+
+  padding: 12px max(22px, calc((100vw - 1440px) / 2));
+
+  border-bottom: 1px solid var(--border);
+
+  background: color-mix(in srgb, var(--background) 92%, transparent);
+
+  backdrop-filter: blur(20px);
+
+}
+
+
+
+.cabecera-administrador>div {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+}
+
+
+
+.cabecera-administrador strong {
+
+  font: 700 20px "Montserrat", sans-serif;
+
+  letter-spacing: -.04em;
+
+}
+
+
+
+.cabecera-administrador nav {
+
+  margin-left: auto;
+
+  display: flex;
+
+  gap: 10px;
+
+}
+
+
+
+.admin-main {
+
+  width: 100%;
+
+  max-width: 1440px;
+
+  padding: 0 24px 60px;
+
+}
+
+
+
+.admin-main .admin {
+
+  padding: 50px 0;
+
+}
+
+
+
+.tabla-admin {
+
+  max-width: 100%;
+
+  overflow-x: auto;
+
+}
+
+
+
+.admin-destacado {
+
+  display: block;
+
+  color: var(--cyan);
+
+  font-size: 11px;
+
+}
+
+
+
+.admin-tabs {
+
+  max-width: 100%;
+
+  overflow-x: auto;
+
+  justify-content: flex-start;
+
+}
+
+
+
+.admin-casilla {
+
+  display: flex;
+
+  flex-direction: row;
+
+  gap: 9px;
+
+  align-items: center;
+
+}
+
+
+
+.admin-casilla input {
+
+  width: auto;
+
+}
+
+
+
+.formulario-entidad {
+
+  max-height: min(68vh, 650px);
+
+  overflow-y: auto;
+
+  padding-right: 5px;
+
+}
+
+
+
+.formulario-entidad select {
+
+  width: 100%;
+
+  min-height: 43px;
+
+  padding: 9px;
+
+  border: 1px solid var(--border);
+
+  background: var(--surface);
+
+  color: var(--foreground);
+
+  border-radius: 8px;
+
+}
+
+
+
+.formulario-entidad input,
+
+.formulario-entidad textarea {
+
+  border-radius: 8px;
+
+}
+
+
+
+.admin-productos-kit {
+
+  max-height: 220px;
+
+  overflow-y: auto;
+
+  border: 1px solid var(--border);
+
+  border-radius: 12px;
+
+  padding: 12px;
+
+}
+
+
+
+.admin-productos-kit>div {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  border-bottom: 1px solid var(--border);
+
+  padding: 7px 0;
+
+}
+
+
+
+.admin-productos-kit label {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  flex: 1;
+
+  margin: 0;
+
+}
+
+
+
+.admin-productos-kit input[type="checkbox"] {
+
+  width: auto;
+
+}
+
+
+
+.admin-productos-kit input[type="number"] {
+
+  width: 70px;
+
+}
+
+
+
+.admin-catalogos-lista {
+
+  padding: 0;
+
+  list-style: none;
+
+}
+
+
+
+.admin-catalogos-lista li {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 10px 0;
+
+  border-bottom: 1px solid var(--border);
+
+}
+
+
+
+.admin-catalogos-lista small {
+
+  color: var(--suave);
+
+  margin-left: 10px;
+
+}
+
+
+
+.admin-selector {
+
+  display: flex;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+
+  margin: 20px 0;
+
+}
+
+
+
+.estado-sin-datos {
+
+  padding: 28px;
+
+  border: 1px dashed var(--border);
+
+  border-radius: 16px;
+
+  color: var(--suave);
+
+}
+
+
+
+
+/* =========================================================
+   FIN · PANEL ADMINISTRADOR · ESTRUCTURA Y FORMULARIOS
+   ========================================================= */
+
+/* =========================================================
+   INICIO · SERVICIOS Y OFERTAS · IMÁGENES
+   Imágenes de servicio y oferta.
+   ========================================================= */
+
+
+
+
+.oferta-imagen {
+
+  display: block;
+
+  width: 100%;
+
+  max-height: 155px;
+
+  object-fit: cover;
+
+  border-radius: 14px;
+
+  margin-bottom: 12px;
+
+}
+
+
+
+
+/* =========================================================
+   FIN · SERVICIOS Y OFERTAS · IMÁGENES
+   ========================================================= */
+
+/* =========================================================
+   INICIO · FOOTER Y ADMIN · AJUSTES RESPONSIVOS
+   Ajustes posteriores del logo del footer y panel administrador.
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+  .cabecera-administrador {
+    padding: 10px 14px;
+    gap: 9px;
+  }
+
+  .cabecera-administrador .eyebrow {
+    display: none;
+  }
+
+  .cabecera-administrador strong {
+    font-size: 15px;
+  }
+
+  .cabecera-administrador nav {
+    gap: 3px;
+  }
+
+  .cabecera-administrador .boton {
+    font-size: 0;
+    min-width: 36px;
+    min-height: 36px;
+    padding: 7px;
+  }
+
+  .cabecera-administrador .boton svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .admin-main {
+    padding-inline: 14px;
+  }
+
+  .footer-top>div:first-child {
+    grid-column: 1 / -1;
+    min-width: 0;
+  }
+}
+
+/* =========================================================
+   FIN · FOOTER Y ADMIN · AJUSTES RESPONSIVOS
+   ========================================================= */
+
+
+
+
+
+
+
+
+/* =========================================================
+   INICIO · PÁGINA DE INICIO · TEXTO MORFOSIS Y HERO ESTABLE
+   Reservas de espacio y ajustes específicos por escritorio.
+   ========================================================= */
+/*========================================================HERO · ESPACIO FIJO PARA TEXTO MORFOSIS=========================================================\*/ 
+.hero .texto-morfosis {
+
+  /* Reservamos espacio equivalente aproximadamente \* a dos líneas en escritorio. \* \* Aunque una frase sea más corta,
+  el contenido que viene debajo NO sube ni baja. */ 
+  margin: 27px 0;
+  overflow: visible;
+
+}
+
+
+
+
+
+.hero .texto-morfosis-contenedor {
+
+  width: 100%;
+
+  height: 100%;
+
+
+
+  align-items: start;
+
+}
+
+
+
+
+
+.hero .texto-morfosis-frase {
+
+  width: 100%;
+
+
+
+  margin: 0;
+
+}
+
+
+
+
+
+
+
+
+
+/*============================HERO · AJUSTE SOLO ESCRITORIO Evita que el texto morfosis se rompa horrible en pantallas grandes \============================/*/ 
+@media (min-width: 1024px) {
+  .hero {
+    height: clamp(500px, 57vh, 550px);
+    min-height: 500px;
+    max-height: 550px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 3.2vw, 3.6rem);
+    line-height: 0.96;
+    letter-spacing: -0.04em;
+    margin: 12px 0 14px;
+    max-width: 15ch;
+  }
+
+  .hero .texto-morfosis {
+    display: block;
+    width: 100%;
+    max-width: 15ch;
+    line-height: 0.96;
+    white-space: normal;
+    overflow: visible;
+    margin: 12px 0 14px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero h1 {
+    font-size: clamp(2.7rem, 3.2vw, 3.8rem);
+    max-width: 16ch;
+  }
+
+  .hero .texto-morfosis {
+    max-width: 16ch;
+  }
+}
+
+@media (min-width: 1920px) {
+  .hero h1 {
+    font-size: clamp(3rem, 3vw, 4rem);
+    max-width: 17ch;
+  }
+
+  .hero .texto-morfosis {
+    max-width: 17ch;
+  }
+}
+
+/* =========================================================
+   FIN · PÁGINA DE INICIO · TEXTO MORFOSIS Y HERO ESTABLE
+   ========================================================= */
